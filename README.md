@@ -1,6 +1,9 @@
 # [ProximityReminders](https://teamtreehouse.com/projects/proximity-reminders)
 <img src="reminders.png" width="250">
 
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-orange.svg?style=flat" alt="Swift 3 compatible" /></a>
+
+
 - [ ] The main screen is a table view with reminders. You can tap to add a new reminder.
 - [ ] When adding a reminder the user can choose to be reminded of when leaving or entering the hard-coded location.
 - [ ] When the user is about to leave or enter the location they must be prompted with a location notification of the reminder.
