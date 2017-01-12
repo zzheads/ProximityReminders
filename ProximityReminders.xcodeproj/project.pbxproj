@@ -10,7 +10,6 @@
 		A643F53C1E281AF0000DF7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */; };
 		A643F53E1E281AF0000DF7E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F53D1E281AF0000DF7E8 /* ViewController.swift */; };
 		A643F5411E281AF0000DF7E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A643F53F1E281AF0000DF7E8 /* Main.storyboard */; };
-		A643F5431E281AF0000DF7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A643F5421E281AF0000DF7E8 /* Assets.xcassets */; };
 		A643F5461E281AF0000DF7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */; };
 		A643F55D1E28212E000DF7E8 /* icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = A643F5591E28212E000DF7E8 /* icon_114.png */; };
 		A643F5611E28225F000DF7E8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A643F55F1E28225F000DF7E8 /* Realm.framework */; };
@@ -27,6 +26,7 @@
 		A67C3D561E282A550016BF0A /* icon_60.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D541E282A550016BF0A /* icon_60.png */; };
 		A67C3D591E282A840016BF0A /* icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D581E282A840016BF0A /* icon_120.png */; };
 		A67C3D5B1E282AA80016BF0A /* icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D5A1E282AA80016BF0A /* icon_40.png */; };
+		A67C3D5D1E2830F00016BF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A643F5421E281AF0000DF7E8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,12 +250,12 @@
 				A67C3D471E2828780016BF0A /* icon_180.png in Resources */,
 				A643F55D1E28212E000DF7E8 /* icon_114.png in Resources */,
 				A67C3D561E282A550016BF0A /* icon_60.png in Resources */,
+				A67C3D5D1E2830F00016BF0A /* Assets.xcassets in Resources */,
 				A67C3D491E2828A90016BF0A /* icon_80.png in Resources */,
 				A67C3D531E282A490016BF0A /* icon_57.png in Resources */,
 				A67C3D5B1E282AA80016BF0A /* icon_40.png in Resources */,
 				A643F5461E281AF0000DF7E8 /* LaunchScreen.storyboard in Resources */,
 				A67C3D4D1E2829960016BF0A /* icon_29.png in Resources */,
-				A643F5431E281AF0000DF7E8 /* Assets.xcassets in Resources */,
 				A67C3D4F1E2829960016BF0A /* icon_87.png in Resources */,
 				A643F5411E281AF0000DF7E8 /* Main.storyboard in Resources */,
 				A67C3D511E2829AD0016BF0A /* icon_58.png in Resources */,

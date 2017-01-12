@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         
         // Get the default Realm
         let realm = try! Realm()
+        print("Realm config: \(realm.configuration)")
         
         // Query Realm for all dogs less than 2 years old
         let puppies = realm.objects(Dog.self).filter("age < 2")
