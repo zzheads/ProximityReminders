@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A643F53C1E281AF0000DF7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */; };
+		A643F53E1E281AF0000DF7E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F53D1E281AF0000DF7E8 /* ViewController.swift */; };
+		A643F5411E281AF0000DF7E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A643F53F1E281AF0000DF7E8 /* Main.storyboard */; };
+		A643F5431E281AF0000DF7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A643F5421E281AF0000DF7E8 /* Assets.xcassets */; };
+		A643F5461E281AF0000DF7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A643F5381E281AF0000DF7E8 /* ProximityReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProximityReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A643F53D1E281AF0000DF7E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A643F5401E281AF0000DF7E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A643F5421E281AF0000DF7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A643F5451E281AF0000DF7E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A643F5471E281AF0000DF7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A643F5351E281AF0000DF7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A643F52F1E281AF0000DF7E8 = {
+			isa = PBXGroup;
+			children = (
+				A643F53A1E281AF0000DF7E8 /* ProximityReminders */,
+				A643F5391E281AF0000DF7E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A643F5391E281AF0000DF7E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A643F5381E281AF0000DF7E8 /* ProximityReminders.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A643F53A1E281AF0000DF7E8 /* ProximityReminders */ = {
+			isa = PBXGroup;
+			children = (
+				A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */,
+				A643F53D1E281AF0000DF7E8 /* ViewController.swift */,
+				A643F53F1E281AF0000DF7E8 /* Main.storyboard */,
+				A643F5421E281AF0000DF7E8 /* Assets.xcassets */,
+				A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */,
+				A643F5471E281AF0000DF7E8 /* Info.plist */,
+			);
+			path = ProximityReminders;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A643F5371E281AF0000DF7E8 /* ProximityReminders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A643F54A1E281AF0000DF7E8 /* Build configuration list for PBXNativeTarget "ProximityReminders" */;
+			buildPhases = (
+				A643F5341E281AF0000DF7E8 /* Sources */,
+				A643F5351E281AF0000DF7E8 /* Frameworks */,
+				A643F5361E281AF0000DF7E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProximityReminders;
+			productName = ProximityReminders;
+			productReference = A643F5381E281AF0000DF7E8 /* ProximityReminders.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A643F5301E281AF0000DF7E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = zzheads;
+				TargetAttributes = {
+					A643F5371E281AF0000DF7E8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = RS93W547X8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A643F5331E281AF0000DF7E8 /* Build configuration list for PBXProject "ProximityReminders" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A643F52F1E281AF0000DF7E8;
+			productRefGroup = A643F5391E281AF0000DF7E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A643F5371E281AF0000DF7E8 /* ProximityReminders */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A643F5361E281AF0000DF7E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A643F5461E281AF0000DF7E8 /* LaunchScreen.storyboard in Resources */,
+				A643F5431E281AF0000DF7E8 /* Assets.xcassets in Resources */,
+				A643F5411E281AF0000DF7E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A643F5341E281AF0000DF7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A643F53E1E281AF0000DF7E8 /* ViewController.swift in Sources */,
+				A643F53C1E281AF0000DF7E8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A643F53F1E281AF0000DF7E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A643F5401E281AF0000DF7E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A643F5451E281AF0000DF7E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A643F5481E281AF0000DF7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A643F5491E281AF0000DF7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A643F54B1E281AF0000DF7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RS93W547X8;
+				INFOPLIST_FILE = ProximityReminders/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.ProximityReminders;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A643F54C1E281AF0000DF7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RS93W547X8;
+				INFOPLIST_FILE = ProximityReminders/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.ProximityReminders;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A643F5331E281AF0000DF7E8 /* Build configuration list for PBXProject "ProximityReminders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A643F5481E281AF0000DF7E8 /* Debug */,
+				A643F5491E281AF0000DF7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A643F54A1E281AF0000DF7E8 /* Build configuration list for PBXNativeTarget "ProximityReminders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A643F54B1E281AF0000DF7E8 /* Debug */,
+				A643F54C1E281AF0000DF7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A643F5301E281AF0000DF7E8 /* Project object */;
+}
