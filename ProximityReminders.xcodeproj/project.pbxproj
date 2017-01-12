@@ -16,7 +16,37 @@
 		A643F55C1E28212E000DF7E8 /* icn2.png in Resources */ = {isa = PBXBuildFile; fileRef = A643F5581E28212E000DF7E8 /* icn2.png */; };
 		A643F55D1E28212E000DF7E8 /* icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = A643F5591E28212E000DF7E8 /* icon_114.png */; };
 		A643F55E1E28212E000DF7E8 /* icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = A643F55A1E28212E000DF7E8 /* icon_57.png */; };
+		A643F5611E28225F000DF7E8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A643F55F1E28225F000DF7E8 /* Realm.framework */; };
+		A643F5621E28225F000DF7E8 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A643F55F1E28225F000DF7E8 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A643F5631E28225F000DF7E8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A643F5601E28225F000DF7E8 /* RealmSwift.framework */; };
+		A643F5641E28225F000DF7E8 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A643F5601E28225F000DF7E8 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A643F56D1E282289000DF7E8 /* ProximityRemindersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F56C1E282289000DF7E8 /* ProximityRemindersTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A643F56F1E282289000DF7E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A643F5301E281AF0000DF7E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A643F5371E281AF0000DF7E8;
+			remoteInfo = ProximityReminders;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A643F5651E28225F000DF7E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A643F5641E28225F000DF7E8 /* RealmSwift.framework in Embed Frameworks */,
+				A643F5621E28225F000DF7E8 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A643F5381E281AF0000DF7E8 /* ProximityReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProximityReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,10 +60,24 @@
 		A643F5581E28212E000DF7E8 /* icn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn2.png; sourceTree = "<group>"; };
 		A643F5591E28212E000DF7E8 /* icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_114.png; sourceTree = "<group>"; };
 		A643F55A1E28212E000DF7E8 /* icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57.png; sourceTree = "<group>"; };
+		A643F55F1E28225F000DF7E8 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		A643F5601E28225F000DF7E8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		A643F56A1E282289000DF7E8 /* ProximityRemindersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProximityRemindersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A643F56C1E282289000DF7E8 /* ProximityRemindersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityRemindersTests.swift; sourceTree = "<group>"; };
+		A643F56E1E282289000DF7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A643F5351E281AF0000DF7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A643F5631E28225F000DF7E8 /* RealmSwift.framework in Frameworks */,
+				A643F5611E28225F000DF7E8 /* Realm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A643F5671E282289000DF7E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,7 +90,10 @@
 		A643F52F1E281AF0000DF7E8 = {
 			isa = PBXGroup;
 			children = (
+				A643F55F1E28225F000DF7E8 /* Realm.framework */,
+				A643F5601E28225F000DF7E8 /* RealmSwift.framework */,
 				A643F53A1E281AF0000DF7E8 /* ProximityReminders */,
+				A643F56B1E282289000DF7E8 /* ProximityRemindersTests */,
 				A643F5391E281AF0000DF7E8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				A643F5381E281AF0000DF7E8 /* ProximityReminders.app */,
+				A643F56A1E282289000DF7E8 /* ProximityRemindersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +132,15 @@
 			path = SupplyFiles;
 			sourceTree = "<group>";
 		};
+		A643F56B1E282289000DF7E8 /* ProximityRemindersTests */ = {
+			isa = PBXGroup;
+			children = (
+				A643F56C1E282289000DF7E8 /* ProximityRemindersTests.swift */,
+				A643F56E1E282289000DF7E8 /* Info.plist */,
+			);
+			path = ProximityRemindersTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +151,8 @@
 				A643F5341E281AF0000DF7E8 /* Sources */,
 				A643F5351E281AF0000DF7E8 /* Frameworks */,
 				A643F5361E281AF0000DF7E8 /* Resources */,
+				A643F5651E28225F000DF7E8 /* Embed Frameworks */,
+				A643F5741E28236A000DF7E8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -103,6 +162,24 @@
 			productName = ProximityReminders;
 			productReference = A643F5381E281AF0000DF7E8 /* ProximityReminders.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A643F5691E282289000DF7E8 /* ProximityRemindersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A643F5711E282289000DF7E8 /* Build configuration list for PBXNativeTarget "ProximityRemindersTests" */;
+			buildPhases = (
+				A643F5661E282289000DF7E8 /* Sources */,
+				A643F5671E282289000DF7E8 /* Frameworks */,
+				A643F5681E282289000DF7E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A643F5701E282289000DF7E8 /* PBXTargetDependency */,
+			);
+			name = ProximityRemindersTests;
+			productName = ProximityRemindersTests;
+			productReference = A643F56A1E282289000DF7E8 /* ProximityRemindersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -118,6 +195,12 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = RS93W547X8;
 						ProvisioningStyle = Automatic;
+					};
+					A643F5691E282289000DF7E8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = RS93W547X8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A643F5371E281AF0000DF7E8;
 					};
 				};
 			};
@@ -135,6 +218,7 @@
 			projectRoot = "";
 			targets = (
 				A643F5371E281AF0000DF7E8 /* ProximityReminders */,
+				A643F5691E282289000DF7E8 /* ProximityRemindersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -154,7 +238,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A643F5681E282289000DF7E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A643F5741E28236A000DF7E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A643F5341E281AF0000DF7E8 /* Sources */ = {
@@ -166,7 +273,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A643F5661E282289000DF7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A643F56D1E282289000DF7E8 /* ProximityRemindersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A643F5701E282289000DF7E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A643F5371E281AF0000DF7E8 /* ProximityReminders */;
+			targetProxy = A643F56F1E282289000DF7E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A643F53F1E281AF0000DF7E8 /* Main.storyboard */ = {
@@ -284,6 +407,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RS93W547X8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProximityReminders/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -298,12 +425,46 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RS93W547X8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProximityReminders/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.ProximityReminders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A643F5721E282289000DF7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = RS93W547X8;
+				FRAMEWORK_SEARCH_PATHS = "/Users/zzheads/XCode/realm-swift-2.1.2/ios/swift-3.0.2";
+				INFOPLIST_FILE = ProximityRemindersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.ProximityRemindersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProximityReminders.app/ProximityReminders";
+			};
+			name = Debug;
+		};
+		A643F5731E282289000DF7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = RS93W547X8;
+				FRAMEWORK_SEARCH_PATHS = "/Users/zzheads/XCode/realm-swift-2.1.2/ios/swift-3.0.2";
+				INFOPLIST_FILE = ProximityRemindersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.ProximityRemindersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProximityReminders.app/ProximityReminders";
 			};
 			name = Release;
 		};
@@ -324,6 +485,15 @@
 			buildConfigurations = (
 				A643F54B1E281AF0000DF7E8 /* Debug */,
 				A643F54C1E281AF0000DF7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A643F5711E282289000DF7E8 /* Build configuration list for PBXNativeTarget "ProximityRemindersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A643F5721E282289000DF7E8 /* Debug */,
+				A643F5731E282289000DF7E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
