@@ -26,7 +26,8 @@
 		A64BE0CF1E29332D00A840BD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0CE1E29332D00A840BD /* AppColor.swift */; };
 		A64BE0D31E2A34C100A840BD /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0D21E2A34C100A840BD /* AppFont.swift */; };
 		A64BE0D51E2A372C00A840BD /* AppMargin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0D41E2A372C00A840BD /* AppMargin.swift */; };
-		A64BE0D91E2A461900A840BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64BE0D81E2A461900A840BD /* Main.storyboard */; };
+		A64BE0DD1E2A9E3800A840BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64BE0DC1E2A9E3800A840BD /* Main.storyboard */; };
+		A64BE0DF1E2AD46A00A840BD /* setCenter+MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0DE1E2AD46A00A840BD /* setCenter+MKMapView.swift */; };
 		A67C3D471E2828780016BF0A /* icon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D461E2828780016BF0A /* icon_180.png */; };
 		A67C3D491E2828A90016BF0A /* icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D481E2828A90016BF0A /* icon_80.png */; };
 		A67C3D4D1E2829960016BF0A /* icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D4A1E2829960016BF0A /* icon_29.png */; };
@@ -87,7 +88,8 @@
 		A64BE0CE1E29332D00A840BD /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		A64BE0D21E2A34C100A840BD /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		A64BE0D41E2A372C00A840BD /* AppMargin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMargin.swift; sourceTree = "<group>"; };
-		A64BE0D81E2A461900A840BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A64BE0DC1E2A9E3800A840BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A64BE0DE1E2AD46A00A840BD /* setCenter+MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "setCenter+MKMapView.swift"; sourceTree = "<group>"; };
 		A67C3D461E2828780016BF0A /* icon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_180.png; sourceTree = "<group>"; };
 		A67C3D481E2828A90016BF0A /* icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80.png; sourceTree = "<group>"; };
 		A67C3D4A1E2829960016BF0A /* icon_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_29.png; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 				A643F5421E281AF0000DF7E8 /* Assets.xcassets */,
 				A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */,
 				A643F5471E281AF0000DF7E8 /* Info.plist */,
-				A64BE0D81E2A461900A840BD /* Main.storyboard */,
+				A64BE0DC1E2A9E3800A840BD /* Main.storyboard */,
 			);
 			path = ProximityReminders;
 			sourceTree = "<group>";
@@ -217,6 +219,7 @@
 				A64BE0CE1E29332D00A840BD /* AppColor.swift */,
 				A64BE0D21E2A34C100A840BD /* AppFont.swift */,
 				A64BE0D41E2A372C00A840BD /* AppMargin.swift */,
+				A64BE0DE1E2AD46A00A840BD /* setCenter+MKMapView.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -314,8 +317,8 @@
 				A67C3D561E282A550016BF0A /* icon_60.png in Resources */,
 				A67C3D5D1E2830F00016BF0A /* Assets.xcassets in Resources */,
 				A67C3D491E2828A90016BF0A /* icon_80.png in Resources */,
-				A64BE0D91E2A461900A840BD /* Main.storyboard in Resources */,
 				A67C3D531E282A490016BF0A /* icon_57.png in Resources */,
+				A64BE0DD1E2A9E3800A840BD /* Main.storyboard in Resources */,
 				A67C3D5B1E282AA80016BF0A /* icon_40.png in Resources */,
 				A643F5461E281AF0000DF7E8 /* LaunchScreen.storyboard in Resources */,
 				A67C3D4D1E2829960016BF0A /* icon_29.png in Resources */,
@@ -360,6 +363,7 @@
 				A64BE0CF1E29332D00A840BD /* AppColor.swift in Sources */,
 				A647AAA21E28FE8E00298E57 /* TypeHasCell.swift in Sources */,
 				A64BE0D31E2A34C100A840BD /* AppFont.swift in Sources */,
+				A64BE0DF1E2AD46A00A840BD /* setCenter+MKMapView.swift in Sources */,
 				A647AA9E1E28EFB600298E57 /* InOut.swift in Sources */,
 				A643F53E1E281AF0000DF7E8 /* MasterViewController.swift in Sources */,
 				A643F53C1E281AF0000DF7E8 /* AppDelegate.swift in Sources */,

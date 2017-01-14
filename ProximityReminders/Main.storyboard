@@ -52,7 +52,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="oxg-5x-51J" kind="show" identifier="editReminder" action="showDetailViewController:sender:" id="Eg9-x5-XfY"/>
+                                    <segue destination="oxg-5x-51J" kind="show" identifier="editReminder" id="GLj-He-Ccq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -148,13 +148,31 @@
                                 <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5O-Bv-RXc">
-                                <rect key="frame" x="112" y="243" width="247" height="372"/>
+                                <rect key="frame" x="112" y="281" width="247" height="334"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="626-N2-vb4">
                                 <rect key="frame" x="16" y="323" width="86" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3Tv-Oi-8iR"/>
                                     <constraint firstAttribute="width" constant="86" id="iJ7-Vd-cag"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address of reminder's location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTY-cs-auV">
+                                <rect key="frame" x="112" y="243" width="247" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeT-xv-RlT">
+                                <rect key="frame" x="16" y="248" width="86" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5VB-ss-6kr"/>
+                                    <constraint firstAttribute="width" constant="86" id="cS0-lK-jIY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="86" id="f9r-1j-4gq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="mhV-Tg-jhf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -167,11 +185,14 @@
                             <constraint firstAttribute="trailing" secondItem="REp-Cd-yat" secondAttribute="trailing" constant="16" id="8Zg-UD-M8P"/>
                             <constraint firstItem="W8I-oa-rPt" firstAttribute="top" secondItem="ZWi-9t-gUi" secondAttribute="bottom" constant="8" id="9vf-PE-eHL"/>
                             <constraint firstItem="W8I-oa-rPt" firstAttribute="leading" secondItem="FQu-Px-p4G" secondAttribute="trailing" constant="8" id="DBE-Ti-jhP"/>
+                            <constraint firstItem="BTY-cs-auV" firstAttribute="leading" secondItem="aeT-xv-RlT" secondAttribute="trailing" constant="10" id="GUZ-W6-kem"/>
+                            <constraint firstItem="BTY-cs-auV" firstAttribute="top" secondItem="REp-Cd-yat" secondAttribute="bottom" constant="8" id="JaK-Cf-gyI"/>
                             <constraint firstItem="Go9-w8-mwW" firstAttribute="top" secondItem="FQu-Px-p4G" secondAttribute="bottom" constant="16" id="KJ7-eI-LF9"/>
                             <constraint firstItem="CaL-tS-el6" firstAttribute="top" secondItem="kcB-g2-jyG" secondAttribute="bottom" constant="72" id="KuN-GW-Ias"/>
                             <constraint firstItem="ZWi-9t-gUi" firstAttribute="top" secondItem="kcB-g2-jyG" secondAttribute="bottom" constant="67" id="Mm0-bY-yvs"/>
                             <constraint firstItem="REp-Cd-yat" firstAttribute="top" secondItem="W8I-oa-rPt" secondAttribute="bottom" constant="8" id="WWm-L8-tkU"/>
                             <constraint firstItem="CaL-tS-el6" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="WdI-cG-F6c"/>
+                            <constraint firstItem="aeT-xv-RlT" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="Y1o-fm-rLG"/>
                             <constraint firstItem="REp-Cd-yat" firstAttribute="leading" secondItem="Go9-w8-mwW" secondAttribute="trailing" constant="8" id="Zhf-ol-VtD"/>
                             <constraint firstAttribute="trailing" secondItem="ZWi-9t-gUi" secondAttribute="trailing" constant="16" id="ets-bq-dCO"/>
                             <constraint firstItem="ZWi-9t-gUi" firstAttribute="leading" secondItem="CaL-tS-el6" secondAttribute="trailing" constant="8" id="fDw-qc-kTe"/>
@@ -179,9 +200,11 @@
                             <constraint firstItem="UHx-mn-Obc" firstAttribute="top" secondItem="O5O-Bv-RXc" secondAttribute="bottom" constant="8" id="gzc-je-Sj4"/>
                             <constraint firstItem="O5O-Bv-RXc" firstAttribute="leading" secondItem="626-N2-vb4" secondAttribute="trailing" constant="10" id="iPd-6I-qfj"/>
                             <constraint firstItem="626-N2-vb4" firstAttribute="centerY" secondItem="WOk-nO-COZ" secondAttribute="centerY" id="n0i-sG-qUV"/>
+                            <constraint firstItem="O5O-Bv-RXc" firstAttribute="top" secondItem="BTY-cs-auV" secondAttribute="bottom" constant="8" id="oUk-hU-DLd"/>
                             <constraint firstItem="626-N2-vb4" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="pTK-PV-CLz"/>
+                            <constraint firstItem="aeT-xv-RlT" firstAttribute="top" secondItem="Go9-w8-mwW" secondAttribute="bottom" constant="17" id="sBU-V6-Zga"/>
+                            <constraint firstAttribute="trailing" secondItem="BTY-cs-auV" secondAttribute="trailing" constant="16" id="u1g-QH-FYW"/>
                             <constraint firstAttribute="trailing" secondItem="O5O-Bv-RXc" secondAttribute="trailing" constant="16" id="vtZ-8b-e1X"/>
-                            <constraint firstItem="O5O-Bv-RXc" firstAttribute="top" secondItem="REp-Cd-yat" secondAttribute="bottom" constant="8" id="wIv-KF-97y"/>
                             <constraint firstItem="Go9-w8-mwW" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="zm4-Rx-9Et"/>
                         </constraints>
                     </view>
@@ -200,6 +223,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addressTextField" destination="BTY-cs-auV" id="6Ic-Ey-ZIH"/>
                         <outlet property="inOutControl" destination="W8I-oa-rPt" id="Yuh-FJ-reb"/>
                         <outlet property="mapView" destination="O5O-Bv-RXc" id="IQD-gF-GfQ"/>
                         <outlet property="messageTextField" destination="REp-Cd-yat" id="5qz-dz-eco"/>
