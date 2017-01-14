@@ -26,9 +26,10 @@ extension RemindersDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Reminder.cellReuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell", for: indexPath)
         let reminder = self.reminders[indexPath.row]
         cell.textLabel?.text = reminder.title
+        cell.textLabel?.font = AppFont.Edit.font
         return cell
     }
     

@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum InOut: String {
-    case In
-    case Out
-    case Unknown    
+enum InOut: Int {
+    case In = 0
+    case Out = 1
+    case Unknown = 2
 }

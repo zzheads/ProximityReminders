@@ -14,7 +14,7 @@ class Reminder: Object, TypeHasCell {
     dynamic var title: String = ""
     fileprivate dynamic var latitude: Double = Double.nan
     fileprivate dynamic var longitude: Double = Double.nan
-    fileprivate dynamic var inOutValue: String = ""
+    fileprivate dynamic var inOutValue: Int = 2
     dynamic var message: String = ""
 }
 
@@ -31,11 +31,19 @@ extension Reminder {
         }
     }
     
-    public func getLocation() -> CLLocation {
+    public func getLocation() -> CLLocation? {
+        if (self.latitude.isNaN || self.longitude.isNaN) {
+            return nil
+        }
         return CLLocation(latitude: self.latitude, longitude: self.longitude)
     }
     
-    public func setLocation(location: CLLocation) {
+    public func setLocation(location: CLLocation?) {
+        guard let location = location else {
+            self.latitude = Double.nan
+            self.longitude = Double.nan
+            return
+        }
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude
     }

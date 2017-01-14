@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-class MasterViewController: UIViewController {
-
+class MasterViewController: UITableViewController {
     let realm = RealmManager.sharedInstance
+    
+    let dataSource = RemindersDataSource()
     
     let reminders = [
         Reminder(value: ["title":"Reminder1"]),
@@ -21,24 +22,8 @@ class MasterViewController: UIViewController {
         Reminder(value: ["title":"Reminder5"])
     ]
     
-    lazy var dataSource: RemindersDataSource = {
-        let dataSource = RemindersDataSource()
-        return dataSource
-    }()
-    
-    lazy var tableView: UITableView = {
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: Reminder.cellReuseIdentifier)
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.dataSource = self.dataSource
-        table.delegate = self
-        return table
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addReminder))
         
         let results = self.realm.objects(Reminder.self)
         if (results.isEmpty) {
@@ -53,28 +38,30 @@ class MasterViewController: UIViewController {
                 print(error)
             }
         }
-        
-        self.view.addSubview(self.tableView)
-        NSLayoutConstraint.activate([
-            self.tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-            ])
+
+        self.tableView.dataSource = self.dataSource
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
-}
-
-extension MasterViewController: UITableViewDelegate {
 }
 
 extension MasterViewController {
-    func addReminder() {
-        print("Segue to add and edit new Reminder")
-    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! DetailViewController
+        guard let segueIdentifier = segue.identifier else {
+            return
+        }
+        switch segueIdentifier {
+        case "addReminder":
+            controller.reminder = Reminder()
+        case "editReminder":
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let reminder = self.dataSource.reminders[indexPath.row]
+                controller.reminder = reminder
+            }
+        default: return
+        }
+    }    
 }

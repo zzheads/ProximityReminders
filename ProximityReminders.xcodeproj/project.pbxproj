@@ -22,6 +22,11 @@
 		A647AA9E1E28EFB600298E57 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647AA9D1E28EFB600298E57 /* InOut.swift */; };
 		A647AAA01E28F5A200298E57 /* RemindersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647AA9F1E28F5A200298E57 /* RemindersDataSource.swift */; };
 		A647AAA21E28FE8E00298E57 /* TypeHasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647AAA11E28FE8E00298E57 /* TypeHasCell.swift */; };
+		A64BE0CC1E292F3100A840BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0CB1E292F3100A840BD /* DetailViewController.swift */; };
+		A64BE0CF1E29332D00A840BD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0CE1E29332D00A840BD /* AppColor.swift */; };
+		A64BE0D31E2A34C100A840BD /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0D21E2A34C100A840BD /* AppFont.swift */; };
+		A64BE0D51E2A372C00A840BD /* AppMargin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0D41E2A372C00A840BD /* AppMargin.swift */; };
+		A64BE0D91E2A461900A840BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64BE0D81E2A461900A840BD /* Main.storyboard */; };
 		A67C3D471E2828780016BF0A /* icon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D461E2828780016BF0A /* icon_180.png */; };
 		A67C3D491E2828A90016BF0A /* icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D481E2828A90016BF0A /* icon_80.png */; };
 		A67C3D4D1E2829960016BF0A /* icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D4A1E2829960016BF0A /* icon_29.png */; };
@@ -78,6 +83,11 @@
 		A647AA9D1E28EFB600298E57 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
 		A647AA9F1E28F5A200298E57 /* RemindersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersDataSource.swift; sourceTree = "<group>"; };
 		A647AAA11E28FE8E00298E57 /* TypeHasCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeHasCell.swift; sourceTree = "<group>"; };
+		A64BE0CB1E292F3100A840BD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A64BE0CE1E29332D00A840BD /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		A64BE0D21E2A34C100A840BD /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		A64BE0D41E2A372C00A840BD /* AppMargin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMargin.swift; sourceTree = "<group>"; };
+		A64BE0D81E2A461900A840BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A67C3D461E2828780016BF0A /* icon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_180.png; sourceTree = "<group>"; };
 		A67C3D481E2828A90016BF0A /* icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80.png; sourceTree = "<group>"; };
 		A67C3D4A1E2829960016BF0A /* icon_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_29.png; sourceTree = "<group>"; };
@@ -132,6 +142,7 @@
 		A643F53A1E281AF0000DF7E8 /* ProximityReminders */ = {
 			isa = PBXGroup;
 			children = (
+				A64BE0CD1E29331B00A840BD /* Helpers */,
 				A647AA961E28EAD700298E57 /* Model */,
 				A647AA931E28E92000298E57 /* Managers */,
 				A647AA921E28E91000298E57 /* Controllers */,
@@ -140,6 +151,7 @@
 				A643F5421E281AF0000DF7E8 /* Assets.xcassets */,
 				A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */,
 				A643F5471E281AF0000DF7E8 /* Info.plist */,
+				A64BE0D81E2A461900A840BD /* Main.storyboard */,
 			);
 			path = ProximityReminders;
 			sourceTree = "<group>";
@@ -174,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				A643F53D1E281AF0000DF7E8 /* MasterViewController.swift */,
+				A64BE0CB1E292F3100A840BD /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +209,16 @@
 				A647AAA11E28FE8E00298E57 /* TypeHasCell.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A64BE0CD1E29331B00A840BD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A64BE0CE1E29332D00A840BD /* AppColor.swift */,
+				A64BE0D21E2A34C100A840BD /* AppFont.swift */,
+				A64BE0D41E2A372C00A840BD /* AppMargin.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +314,7 @@
 				A67C3D561E282A550016BF0A /* icon_60.png in Resources */,
 				A67C3D5D1E2830F00016BF0A /* Assets.xcassets in Resources */,
 				A67C3D491E2828A90016BF0A /* icon_80.png in Resources */,
+				A64BE0D91E2A461900A840BD /* Main.storyboard in Resources */,
 				A67C3D531E282A490016BF0A /* icon_57.png in Resources */,
 				A67C3D5B1E282AA80016BF0A /* icon_40.png in Resources */,
 				A643F5461E281AF0000DF7E8 /* LaunchScreen.storyboard in Resources */,
@@ -330,12 +354,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A64BE0CC1E292F3100A840BD /* DetailViewController.swift in Sources */,
 				A647AAA01E28F5A200298E57 /* RemindersDataSource.swift in Sources */,
 				A647AA9A1E28EC7800298E57 /* LocationManager.swift in Sources */,
+				A64BE0CF1E29332D00A840BD /* AppColor.swift in Sources */,
 				A647AAA21E28FE8E00298E57 /* TypeHasCell.swift in Sources */,
+				A64BE0D31E2A34C100A840BD /* AppFont.swift in Sources */,
 				A647AA9E1E28EFB600298E57 /* InOut.swift in Sources */,
 				A643F53E1E281AF0000DF7E8 /* MasterViewController.swift in Sources */,
 				A643F53C1E281AF0000DF7E8 /* AppDelegate.swift in Sources */,
+				A64BE0D51E2A372C00A840BD /* AppMargin.swift in Sources */,
 				A647AA951E28E94100298E57 /* RealmManager.swift in Sources */,
 				A647AA9C1E28EEF400298E57 /* Reminder.swift in Sources */,
 			);
