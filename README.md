@@ -31,4 +31,4 @@ which will be pushed when user getin/getout to/from that location.
 <img src="/ProximityReminders/Assets.xcassets/shot_04.imageset/shot_04.png" width="250">
 <img src="/ProximityReminders/Assets.xcassets/shot_05.imageset/shot_05.png" width="250">
 
-<h6>Application uses Realm mobile database engine. [More info about it](http://realm.io)</h6>
+<h6>Application uses Realm mobile database engine.</h6> [More info about it](https://realm.io)
