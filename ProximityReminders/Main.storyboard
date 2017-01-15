@@ -34,6 +34,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="sectionIndexBackgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderCell" textLabel="mjk-xG-f10" style="IBUITableViewCellStyleDefault" id="jRK-kH-0Bf">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -45,12 +48,17 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mjk-xG-f10">
                                             <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                            <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <segue destination="oxg-5x-51J" kind="show" identifier="editReminder" id="GLj-He-Ccq"/>
                                 </connections>
@@ -63,7 +71,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Reminders" id="ejw-6d-kFP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="yG9-h8-aar">
+                        <barButtonItem key="leftBarButtonItem" title="Locations" style="done" id="yG9-h8-aar">
                             <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="ksy-bE-fEb" kind="show" identifier="editLocations" id="OtF-8h-gtL"/>
@@ -282,58 +290,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-tS-el6">
-                                <rect key="frame" x="16" y="136" width="86" height="21"/>
+                                <rect key="frame" x="16" y="82" width="86" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="1rO-p1-ing"/>
-                                    <constraint firstAttribute="height" constant="21" id="Fmf-TA-9TR"/>
+                                    <constraint firstAttribute="width" constant="86" id="NTX-e3-XwH"/>
+                                    <constraint firstAttribute="height" constant="21" id="Qlx-SZ-JMb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQu-Px-p4G">
-                                <rect key="frame" x="16" y="173" width="86" height="21"/>
+                                <rect key="frame" x="16" y="119" width="86" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Wv5-3G-2cd"/>
-                                    <constraint firstAttribute="width" constant="86" id="u9h-RF-mj9"/>
+                                    <constraint firstAttribute="width" constant="86" id="HGq-OW-57u"/>
+                                    <constraint firstAttribute="height" constant="21" id="NhF-Wd-WVp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-w8-mwW">
-                                <rect key="frame" x="16" y="210" width="86" height="21"/>
+                                <rect key="frame" x="16" y="156" width="86" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="Hwy-et-vFa"/>
-                                    <constraint firstAttribute="height" constant="21" id="qgg-Rd-oe5"/>
+                                    <constraint firstAttribute="width" constant="86" id="cEX-H5-uFI"/>
+                                    <constraint firstAttribute="height" constant="21" id="qpe-l6-MSY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of reminder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWi-9t-gUi">
-                                <rect key="frame" x="110" y="131" width="249" height="30"/>
+                                <rect key="frame" x="110" y="77" width="249" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="DWV-gQ-V71"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZvU-UR-1hw"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message of reminder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REp-Cd-yat">
-                                <rect key="frame" x="110" y="205" width="249" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message of reminder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34A-uh-3Ya">
+                                <rect key="frame" x="110" y="151" width="249" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="KIt-1z-aX8"/>
+                                    <constraint firstAttribute="height" constant="30" id="EYE-Ne-3qq"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W8I-oa-rPt">
-                                <rect key="frame" x="110" y="169" width="78" height="29"/>
+                                <rect key="frame" x="110" y="115" width="78" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="J5r-aX-ea7"/>
-                                    <constraint firstAttribute="width" constant="78" id="frS-zA-XWk"/>
+                                    <constraint firstAttribute="height" constant="28" id="1hQ-2F-kJn"/>
+                                    <constraint firstAttribute="width" constant="78" id="XXJ-Lc-0zx"/>
                                 </constraints>
                                 <segments>
                                     <segment title="In"/>
@@ -341,46 +349,64 @@
                                 </segments>
                                 <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeT-xv-RlT">
-                                <rect key="frame" x="16" y="248" width="86" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5VB-ss-6kr"/>
-                                    <constraint firstAttribute="width" constant="86" id="cS0-lK-jIY"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="86" id="f9r-1j-4gq"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="mhV-Tg-jhf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OS-ve-TxP">
-                                <rect key="frame" x="16" y="277" width="343" height="338"/>
-                                <color key="backgroundColor" red="0.80886739490000004" green="0.77278232570000005" blue="0.88971918819999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="226" width="343" height="389"/>
+                                <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiS-5C-PkC">
+                                <rect key="frame" x="110" y="189" width="249" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="17q-Fi-hjk"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Location's title">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="Menlo-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="1" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeT-xv-RlT">
+                                <rect key="frame" x="16" y="193" width="86" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="DdM-vX-6zH"/>
+                                    <constraint firstAttribute="height" constant="21" id="Qbm-bQ-4Gt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FQu-Px-p4G" firstAttribute="top" secondItem="CaL-tS-el6" secondAttribute="bottom" constant="16" id="42k-YA-UWO"/>
-                            <constraint firstAttribute="trailing" secondItem="REp-Cd-yat" secondAttribute="trailing" constant="16" id="8Zg-UD-M8P"/>
-                            <constraint firstItem="1OS-ve-TxP" firstAttribute="top" secondItem="aeT-xv-RlT" secondAttribute="bottom" constant="8" id="9oh-xi-0jQ"/>
-                            <constraint firstItem="W8I-oa-rPt" firstAttribute="top" secondItem="ZWi-9t-gUi" secondAttribute="bottom" constant="8" id="9vf-PE-eHL"/>
-                            <constraint firstItem="W8I-oa-rPt" firstAttribute="leading" secondItem="FQu-Px-p4G" secondAttribute="trailing" constant="8" id="DBE-Ti-jhP"/>
-                            <constraint firstAttribute="trailing" secondItem="1OS-ve-TxP" secondAttribute="trailing" constant="16" id="GGX-O9-yk3"/>
-                            <constraint firstItem="Go9-w8-mwW" firstAttribute="top" secondItem="FQu-Px-p4G" secondAttribute="bottom" constant="16" id="KJ7-eI-LF9"/>
-                            <constraint firstItem="CaL-tS-el6" firstAttribute="top" secondItem="kcB-g2-jyG" secondAttribute="bottom" constant="72" id="KuN-GW-Ias"/>
-                            <constraint firstItem="UHx-mn-Obc" firstAttribute="top" secondItem="1OS-ve-TxP" secondAttribute="bottom" constant="8" id="LwG-oc-J4z"/>
-                            <constraint firstItem="ZWi-9t-gUi" firstAttribute="top" secondItem="kcB-g2-jyG" secondAttribute="bottom" constant="67" id="Mm0-bY-yvs"/>
-                            <constraint firstItem="REp-Cd-yat" firstAttribute="top" secondItem="W8I-oa-rPt" secondAttribute="bottom" constant="8" id="WWm-L8-tkU"/>
-                            <constraint firstItem="CaL-tS-el6" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="WdI-cG-F6c"/>
-                            <constraint firstItem="aeT-xv-RlT" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="Y1o-fm-rLG"/>
-                            <constraint firstItem="REp-Cd-yat" firstAttribute="leading" secondItem="Go9-w8-mwW" secondAttribute="trailing" constant="8" id="Zhf-ol-VtD"/>
-                            <constraint firstAttribute="trailing" secondItem="ZWi-9t-gUi" secondAttribute="trailing" constant="16" id="ets-bq-dCO"/>
-                            <constraint firstItem="ZWi-9t-gUi" firstAttribute="leading" secondItem="CaL-tS-el6" secondAttribute="trailing" constant="8" id="fDw-qc-kTe"/>
-                            <constraint firstItem="FQu-Px-p4G" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="gsV-xp-4Wf"/>
-                            <constraint firstItem="1OS-ve-TxP" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="iKe-AS-fLP"/>
-                            <constraint firstItem="aeT-xv-RlT" firstAttribute="top" secondItem="Go9-w8-mwW" secondAttribute="bottom" constant="17" id="sBU-V6-Zga"/>
-                            <constraint firstItem="Go9-w8-mwW" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="zm4-Rx-9Et"/>
+                            <constraint firstItem="ZWi-9t-gUi" firstAttribute="leading" secondItem="CaL-tS-el6" secondAttribute="trailing" constant="8" id="1o3-5p-4CF"/>
+                            <constraint firstItem="34A-uh-3Ya" firstAttribute="leading" secondItem="Go9-w8-mwW" secondAttribute="trailing" constant="8" id="3zR-HC-XA9"/>
+                            <constraint firstItem="1OS-ve-TxP" firstAttribute="top" secondItem="kiS-5C-PkC" secondAttribute="bottom" constant="8" id="4KV-Ap-qnh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZWi-9t-gUi" secondAttribute="trailing" constant="16" id="HIF-Kz-gvs"/>
+                            <constraint firstItem="kiS-5C-PkC" firstAttribute="leading" secondItem="aeT-xv-RlT" secondAttribute="trailing" constant="8" id="LpV-gG-pDP"/>
+                            <constraint firstItem="W8I-oa-rPt" firstAttribute="top" secondItem="ZWi-9t-gUi" secondAttribute="bottom" constant="8" id="Mq5-wt-fAZ"/>
+                            <constraint firstAttribute="trailing" secondItem="34A-uh-3Ya" secondAttribute="trailing" constant="16" id="RQq-YZ-cK5"/>
+                            <constraint firstItem="1OS-ve-TxP" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="WOt-IH-iDp"/>
+                            <constraint firstItem="Go9-w8-mwW" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="X2d-wW-Ewj"/>
+                            <constraint firstItem="aeT-xv-RlT" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="an0-bz-bn7"/>
+                            <constraint firstItem="FQu-Px-p4G" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="boW-Qx-v3p"/>
+                            <constraint firstItem="FQu-Px-p4G" firstAttribute="top" secondItem="CaL-tS-el6" secondAttribute="bottom" constant="16" id="cc1-kj-njM"/>
+                            <constraint firstItem="CaL-tS-el6" firstAttribute="top" secondItem="kcB-g2-jyG" secondAttribute="bottom" constant="18" id="dWr-KN-8fz"/>
+                            <constraint firstItem="W8I-oa-rPt" firstAttribute="leading" secondItem="FQu-Px-p4G" secondAttribute="trailing" constant="8" id="dem-cx-ly4"/>
+                            <constraint firstAttribute="trailing" secondItem="kiS-5C-PkC" secondAttribute="trailing" constant="16" id="dyK-Cz-tJk"/>
+                            <constraint firstItem="aeT-xv-RlT" firstAttribute="top" secondItem="Go9-w8-mwW" secondAttribute="bottom" constant="16" id="hJS-mB-f75"/>
+                            <constraint firstItem="34A-uh-3Ya" firstAttribute="top" secondItem="W8I-oa-rPt" secondAttribute="bottom" constant="8" id="j03-mQ-6i3"/>
+                            <constraint firstAttribute="trailing" secondItem="1OS-ve-TxP" secondAttribute="trailing" constant="16" id="n3a-xe-ADj"/>
+                            <constraint firstItem="ZWi-9t-gUi" firstAttribute="top" secondItem="kcB-g2-jyG" secondAttribute="bottom" constant="13" id="qUQ-FL-eup"/>
+                            <constraint firstItem="Go9-w8-mwW" firstAttribute="top" secondItem="FQu-Px-p4G" secondAttribute="bottom" constant="16" id="wAw-Iq-oUT"/>
+                            <constraint firstItem="CaL-tS-el6" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="wP0-Yr-TUy"/>
+                            <constraint firstItem="kiS-5C-PkC" firstAttribute="top" secondItem="34A-uh-3Ya" secondAttribute="bottom" constant="8" id="wUQ-VD-IwY"/>
+                            <constraint firstItem="UHx-mn-Obc" firstAttribute="top" secondItem="1OS-ve-TxP" secondAttribute="bottom" constant="8" id="xSg-Qx-elW"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -401,8 +427,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="inOutControl" destination="W8I-oa-rPt" id="Yuh-FJ-reb"/>
+                        <outlet property="locationLabel" destination="kiS-5C-PkC" id="hB6-nw-QGN"/>
                         <outlet property="locationPickerView" destination="1OS-ve-TxP" id="w0x-iV-6Qa"/>
-                        <outlet property="messageTextField" destination="REp-Cd-yat" id="5qz-dz-eco"/>
+                        <outlet property="messageTextField" destination="34A-uh-3Ya" id="1bd-gJ-Mun"/>
                         <outlet property="titleTextField" destination="ZWi-9t-gUi" id="63J-2p-uWL"/>
                     </connections>
                 </viewController>

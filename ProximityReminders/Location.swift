@@ -50,5 +50,11 @@ extension Location {
 }
 
 extension Location {
-    
+    var desc: String {
+        var desc = self.title
+        if let coordinate = self.coordinate {
+            desc += " (\(coordinate.latitude),\(coordinate.longitude))"
+        }
+        return desc
+    }
 }

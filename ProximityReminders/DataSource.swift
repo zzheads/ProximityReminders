@@ -48,28 +48,12 @@ extension DataSource: UITableViewDataSource {
     }
 }
 
-extension DataSource: UIPickerViewDataSource, UIPickerViewDelegate {
+extension DataSource: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.locations.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let location = self.locations[row]
-        let title = "\(location.title) at \(location.address!)(\(location.coordinate))"
-        if (view == nil) {
-            let label = UILabel()
-            label.text = title
-            label.font = AppFont.Edit.font
-            label.textColor = AppColor.BlueDarken.color
-            return label
-        } else {
-            let label = view as! UILabel
-            label.text = "reused"
-            return label
-        }
     }
 }

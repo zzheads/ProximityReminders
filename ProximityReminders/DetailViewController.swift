@@ -25,8 +25,9 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var inOutControl: UISegmentedControl!
-    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var locationPickerView: UIPickerView!
+    @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var locationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +47,11 @@ class DetailViewController: UIViewController {
         }
         
         self.locationPickerView.dataSource = self.locationsDataSource
-        self.locationPickerView.delegate = self.locationsDataSource
+        self.locationPickerView.delegate = self
         
         if let location = reminder.location, let index = self.locationsDataSource.locations.index(of: location) {
             self.locationPickerView.selectRow(index, inComponent: 0, animated: true)
+            self.locationLabel.text = location.desc
         }
     }
     
@@ -108,5 +110,28 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     func dismiss(animated: Bool) {
         _ = navigationController?.popViewController(animated: animated)
+    }
+}
+
+extension DetailViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let location = self.locationsDataSource.locations[row]
+        let title = "\(location.title) at \(location.address!)(\(location.coordinate))"
+        if (view == nil) {
+            let label = UILabel()
+            label.text = title
+            label.font = AppFont.Edit.font
+            label.textColor = AppColor.BlueDarken.color
+            return label
+        } else {
+            let label = view as! UILabel
+            label.text = "reused"
+            return label
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let location = self.locationsDataSource.locations[row]
+        self.locationLabel.text = location.desc
     }
 }
