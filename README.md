@@ -16,3 +16,13 @@
 - [ ] Add the ability to display the location on the map.
 - [ ] Add the ability to display a geo-fenced circle around the location.
 - [ ] Exceptional code quality.
+
+
+iOS app built for users who needs have reminder/reminders when get in some defined location area or get out from it.
+You can have any number of such reminders/locations. Process of creating location or reminder is pretty easy, 
+for create location you can enter address/placemark/coordinates (latitude, longitude) to determine location. 
+Program, if search was successfull, will draw that defined location on map. After that, all you need is give that location
+the title and press "Done" to save it for future using in your reminders. Reminder is location plus notification, 
+which will be pushed when user getin/getout to/from that location.
+
+<img src="ProximityReminders/ProximityReminders/Assets.xcassets/screenshot_01.imageset/screenshot_01.png">
