@@ -25,4 +25,6 @@ Program, if search was successfull, will draw that defined location on map. Afte
 the title and press "Done" to save it for future using in your reminders. Reminder is location plus notification, 
 which will be pushed when user getin/getout to/from that location.
 
-<img src="/ProximityReminders/Assets.xcassets/screenshot_01.imageset/screenshot_01.png">
+<img src="/ProximityReminders/Assets.xcassets/screenshot_01.imageset/screenshot_01.png" width="200">
+<img src="/ProximityReminders/Assets.xcassets/screenshot_02.imageset/screenshot_02.png" width="200">
+<img src="/ProximityReminders/Assets.xcassets/screenshot_03.imageset/screenshot_03.png" width="200">
