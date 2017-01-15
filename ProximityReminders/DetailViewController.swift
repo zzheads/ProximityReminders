@@ -10,26 +10,27 @@ import Foundation
 import UIKit
 import MapKit
 
+protocol UpdateChangesDelegate {
+    func updateChanges()
+}
+
 class DetailViewController: UIViewController {
     let realm = RealmManager.sharedInstance
     let locationManager = LocationManager.sharedInstance
     let geocoder = CLGeocoder()
+    let locationsDataSource = DataSource()
     var reminder: Reminder?
+    var delegate: UpdateChangesDelegate?
+    var isUpdate: Bool = false
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var inOutControl: UISegmentedControl!
     @IBOutlet weak var messageTextField: UITextField!
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var addressTextField: UITextField!
-        
+    @IBOutlet weak var locationPickerView: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
-        if (!self.locationManager.isAuthorized) {
-            self.locationManager.requestAlwaysAuthorization()
-        }
-        self.mapView.delegate = self
-        self.addressTextField.addTarget(self, action: #selector(self.addressEntered), for: .editingDidEnd)
     }
     
     private func configureView() {
@@ -39,34 +40,16 @@ class DetailViewController: UIViewController {
         self.titleTextField.text = reminder.title
         self.messageTextField.text = reminder.message
         self.inOutControl.selectedSegmentIndex = reminder.inOut.rawValue
-        if let location = reminder.getLocation() {
-            self.mapView.setCenter(location: location.coordinate)
+        
+        if (!self.locationManager.isAuthorized) {
+            self.locationManager.requestAlwaysAuthorization()
         }
-    }
-    
-    @objc private func addressEntered() {
-        guard let address = self.addressTextField.text else {
-            return
-        }
-        self.geocoder.geocodeAddressString(address) { (placemarks, error) in
-            guard
-            let placemarks = placemarks,
-            let placemark = placemarks.first,
-            let location = placemark.location
-                else {
-                    if let error = error {
-                        print("Geocoding error: \(error)")
-                        return
-                    } else {
-                        print("Unresolved geocoding problem")
-                        return
-                    }
-            }
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = location.coordinate
-            annotation.title = address
-            self.mapView.addAnnotation(annotation)
-            self.mapView.setCenter(location: annotation.coordinate)
+        
+        self.locationPickerView.dataSource = self.locationsDataSource
+        self.locationPickerView.delegate = self.locationsDataSource
+        
+        if let location = reminder.location, let index = self.locationsDataSource.locations.index(of: location) {
+            self.locationPickerView.selectRow(index, inComponent: 0, animated: true)
         }
     }
     
@@ -75,21 +58,44 @@ class DetailViewController: UIViewController {
             let reminder = self.reminder,
             let title = self.titleTextField.text,
             let message = self.messageTextField.text,
-            let inOut = InOut(rawValue: self.inOutControl.selectedSegmentIndex),
-            let annotation = mapView.annotations.last
+            let inOut = InOut(rawValue: self.inOutControl.selectedSegmentIndex)
             else {
                 return
         }
+        let location = self.locationsDataSource.locations[self.locationPickerView.selectedRow(inComponent: 0)]
         
-        let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+        switch isUpdate {
+        case true:
+            do {
+                self.realm.beginWrite()
+                reminder.title = title
+                reminder.inOut = inOut
+                reminder.message = message
+                reminder.location = location
+                try self.realm.commitWrite()
+            } catch {
+                print("Error saving reminder: \(error)")
+            }
+            
+        case false:
+            reminder.title = title
+            reminder.inOut = inOut
+            reminder.message = message
+            reminder.location = location
+            
+            do {
+                try self.realm.write {
+                    self.realm.add(reminder)
+                }
+            } catch {
+                print("Error saving reminder: \(error)")
+            }
+            
+        }
         
-        self.realm.beginWrite()
-        reminder.title = title
-        reminder.inOut = inOut
-        reminder.message = message
-        reminder.setLocation(location: location)
-        try! self.realm.commitWrite()
-        
+        if let delegate = self.delegate {
+            delegate.updateChanges()
+        }
         print("Saving reminder: \(self.reminder)")
         self.dismiss(animated: true)
     }
@@ -103,12 +109,4 @@ extension DetailViewController {
     func dismiss(animated: Bool) {
         _ = navigationController?.popViewController(animated: animated)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-}
-
-extension DetailViewController: MKMapViewDelegate {
-    
 }

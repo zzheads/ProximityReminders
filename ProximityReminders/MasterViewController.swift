@@ -11,34 +11,10 @@ import RealmSwift
 
 class MasterViewController: UITableViewController {
     let realm = RealmManager.sharedInstance
-    
-    let dataSource = RemindersDataSource()
-    
-    let reminders = [
-        Reminder(value: ["title":"Reminder1"]),
-        Reminder(value: ["title":"Reminder2"]),
-        Reminder(value: ["title":"Reminder3"]),
-        Reminder(value: ["title":"Reminder4"]),
-        Reminder(value: ["title":"Reminder5"])
-    ]
+    let dataSource = DataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let results = self.realm.objects(Reminder.self)
-        if (results.isEmpty) {
-            do {
-                try self.realm.write {
-                    for reminder in self.reminders {
-                        self.realm.add(reminder)
-                    }
-                }
-                try self.realm.commitWrite()
-            } catch {
-                print(error)
-            }
-        }
-
         self.tableView.dataSource = self.dataSource
     }
 
@@ -49,19 +25,33 @@ class MasterViewController: UITableViewController {
 
 extension MasterViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as! DetailViewController
         guard let segueIdentifier = segue.identifier else {
             return
         }
         switch segueIdentifier {
         case "addReminder":
+            let controller = segue.destination as! DetailViewController
+            controller.delegate = self
+            controller.isUpdate = false
             controller.reminder = Reminder()
         case "editReminder":
+            let controller = segue.destination as! DetailViewController
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let reminder = self.dataSource.reminders[indexPath.row]
                 controller.reminder = reminder
+                controller.isUpdate = true
             }
-        default: return
+            controller.delegate = self
+        case "editLocations":
+            let _ = segue.destination as! MapViewController
+        default:
+            break
         }
-    }    
+    }
+}
+
+extension MasterViewController: UpdateChangesDelegate {
+    func updateChanges() {
+        self.tableView.reloadData()
+    }
 }

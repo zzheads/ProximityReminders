@@ -15,8 +15,8 @@ enum AppFont {
 
     var font: UIFont {
         guard
-            let normalFont = UIFont(name: "Futura Medium", size: 14.0),
-            let boldFont = UIFont(name: "Futura Bold", size: 14.0)
+            let normalFont = UIFont(name: "Menlo-Regular", size: 14.0),
+            let boldFont = UIFont(name: "Menlo-Bold", size: 14.0)
             else {
             return UIFont.boldSystemFont(ofSize: 14.0)
         }
