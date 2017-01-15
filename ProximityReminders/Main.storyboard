@@ -324,7 +324,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZvU-UR-1hw"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -333,7 +333,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EYE-Ne-3qq"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
