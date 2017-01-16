@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6151FE71E2D858C00E4D742 /* CLLocationManager Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6151FE61E2D858C00E4D742 /* CLLocationManager Extension.swift */; };
 		A643F53C1E281AF0000DF7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */; };
 		A643F53E1E281AF0000DF7E8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F53D1E281AF0000DF7E8 /* MasterViewController.swift */; };
 		A643F5461E281AF0000DF7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */; };
@@ -16,11 +17,8 @@
 		A643F5631E28225F000DF7E8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A643F5601E28225F000DF7E8 /* RealmSwift.framework */; };
 		A643F5641E28225F000DF7E8 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A643F5601E28225F000DF7E8 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A643F56D1E282289000DF7E8 /* ProximityRemindersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F56C1E282289000DF7E8 /* ProximityRemindersTests.swift */; };
-		A647AA951E28E94100298E57 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647AA941E28E94100298E57 /* RealmManager.swift */; };
-		A647AA9A1E28EC7800298E57 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647AA991E28EC7800298E57 /* LocationManager.swift */; };
 		A647AA9C1E28EEF400298E57 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647AA9B1E28EEF400298E57 /* Reminder.swift */; };
 		A647AA9E1E28EFB600298E57 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647AA9D1E28EFB600298E57 /* InOut.swift */; };
-		A647AAA21E28FE8E00298E57 /* TypeHasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647AAA11E28FE8E00298E57 /* TypeHasCell.swift */; };
 		A64BE0CC1E292F3100A840BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0CB1E292F3100A840BD /* DetailViewController.swift */; };
 		A64BE0CF1E29332D00A840BD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0CE1E29332D00A840BD /* AppColor.swift */; };
 		A64BE0D31E2A34C100A840BD /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64BE0D21E2A34C100A840BD /* AppFont.swift */; };
@@ -75,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A6151FE61E2D858C00E4D742 /* CLLocationManager Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager Extension.swift"; sourceTree = "<group>"; };
 		A643F5381E281AF0000DF7E8 /* ProximityReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProximityReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A643F53D1E281AF0000DF7E8 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -87,11 +86,8 @@
 		A643F56A1E282289000DF7E8 /* ProximityRemindersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProximityRemindersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A643F56C1E282289000DF7E8 /* ProximityRemindersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityRemindersTests.swift; sourceTree = "<group>"; };
 		A643F56E1E282289000DF7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A647AA941E28E94100298E57 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		A647AA991E28EC7800298E57 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A647AA9B1E28EEF400298E57 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		A647AA9D1E28EFB600298E57 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
-		A647AAA11E28FE8E00298E57 /* TypeHasCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeHasCell.swift; sourceTree = "<group>"; };
 		A64BE0CB1E292F3100A840BD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A64BE0CE1E29332D00A840BD /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		A64BE0D21E2A34C100A840BD /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
@@ -166,10 +162,8 @@
 		A643F53A1E281AF0000DF7E8 /* ProximityReminders */ = {
 			isa = PBXGroup;
 			children = (
-				A64E1FFE1E2CFE4B008793DF /* ProximityReminders.entitlements */,
 				A64BE0CD1E29331B00A840BD /* Helpers */,
 				A647AA961E28EAD700298E57 /* Model */,
-				A647AA931E28E92000298E57 /* Managers */,
 				A647AA921E28E91000298E57 /* Controllers */,
 				A643F5561E28212E000DF7E8 /* SupplyFiles */,
 				A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */,
@@ -177,6 +171,7 @@
 				A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */,
 				A64E1FF21E2CC7F8008793DF /* Main.storyboard */,
 				A643F5471E281AF0000DF7E8 /* Info.plist */,
+				A64E1FFE1E2CFE4B008793DF /* ProximityReminders.entitlements */,
 			);
 			path = ProximityReminders;
 			sourceTree = "<group>";
@@ -218,21 +213,11 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		A647AA931E28E92000298E57 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				A647AA941E28E94100298E57 /* RealmManager.swift */,
-				A647AA991E28EC7800298E57 /* LocationManager.swift */,
-			);
-			name = Managers;
-			sourceTree = "<group>";
-		};
 		A647AA961E28EAD700298E57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A647AA9B1E28EEF400298E57 /* Reminder.swift */,
 				A647AA9D1E28EFB600298E57 /* InOut.swift */,
-				A647AAA11E28FE8E00298E57 /* TypeHasCell.swift */,
 				A64E1FE61E2B63A7008793DF /* Location.swift */,
 				A64E1FF61E2CCBBE008793DF /* LocationsDataSource.swift */,
 				A64E1FF81E2CCBCD008793DF /* RemindersDataSource.swift */,
@@ -250,6 +235,7 @@
 				A64BE0D41E2A372C00A840BD /* AppMargin.swift */,
 				A64BE0DE1E2AD46A00A840BD /* MKMapView Extensions.swift */,
 				A64E1FF01E2C12CA008793DF /* CLPlacemark Extension.swift */,
+				A6151FE61E2D858C00E4D742 /* CLLocationManager Extension.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -410,11 +396,10 @@
 				A64BE0CC1E292F3100A840BD /* DetailViewController.swift in Sources */,
 				A64E1FF71E2CCBBE008793DF /* LocationsDataSource.swift in Sources */,
 				A64E1FF91E2CCBCD008793DF /* RemindersDataSource.swift in Sources */,
+				A6151FE71E2D858C00E4D742 /* CLLocationManager Extension.swift in Sources */,
 				A64E1FF51E2CCA9E008793DF /* LocationsTableViewController.swift in Sources */,
 				A64E1FF11E2C12CA008793DF /* CLPlacemark Extension.swift in Sources */,
-				A647AA9A1E28EC7800298E57 /* LocationManager.swift in Sources */,
 				A64BE0CF1E29332D00A840BD /* AppColor.swift in Sources */,
-				A647AAA21E28FE8E00298E57 /* TypeHasCell.swift in Sources */,
 				A64BE0D31E2A34C100A840BD /* AppFont.swift in Sources */,
 				A64E1FE71E2B63A7008793DF /* Location.swift in Sources */,
 				A64BE0DF1E2AD46A00A840BD /* MKMapView Extensions.swift in Sources */,
@@ -422,7 +407,6 @@
 				A643F53E1E281AF0000DF7E8 /* MasterViewController.swift in Sources */,
 				A643F53C1E281AF0000DF7E8 /* AppDelegate.swift in Sources */,
 				A64BE0D51E2A372C00A840BD /* AppMargin.swift in Sources */,
-				A647AA951E28E94100298E57 /* RealmManager.swift in Sources */,
 				A64E1FE91E2B689E008793DF /* MapViewController.swift in Sources */,
 				A64E1FFB1E2CE828008793DF /* MapAnnotation.swift in Sources */,
 				A64E1FFD1E2CEDD1008793DF /* AppMap.swift in Sources */,

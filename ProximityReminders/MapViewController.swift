@@ -13,7 +13,7 @@ import MapKit
 import RealmSwift
 
 class MapViewController: UIViewController {
-    let locationManager = LocationManager.sharedInstance
+    let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     var annotation: MapAnnotation? {
         willSet {

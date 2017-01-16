@@ -1,8 +1,8 @@
 //
-//  LocationManager.swift
+//  CLLocationManager Extension.swift
 //  ProximityReminders
 //
-//  Created by Alexey Papin on 13.01.17.
+//  Created by Alexey Papin on 17.01.17.
 //  Copyright © 2017 zzheads. All rights reserved.
 //
 
@@ -10,8 +10,7 @@ import Foundation
 import CoreLocation
 import RealmSwift
 
-class LocationManager: CLLocationManager {
-    static let sharedInstance = LocationManager()
+extension CLLocationManager {
     
     var isAuthorized: Bool {
         switch (CLLocationManager.authorizationStatus()) {

@@ -13,7 +13,7 @@ import CoreLocation
 class MasterViewController: UITableViewController {
     var notificationToken: NotificationToken?
     let dataSource = RemindersDataSource()
-    let locationManager = LocationManager.sharedInstance
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class MasterViewController: UITableViewController {
                 tableView.reloadData()
                 break
             case .update(let reminders, let deletions, let insertions, let modifications):
-                LocationManager.sharedInstance.refreshNotifications(with: reminders)
+                self?.locationManager.refreshNotifications(with: reminders)
                 tableView.beginUpdates()
                 tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
                 tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)

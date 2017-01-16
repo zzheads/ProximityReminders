@@ -12,7 +12,7 @@ import MapKit
 import RealmSwift
 
 class DetailViewController: UIViewController {
-    let locationManager = LocationManager.sharedInstance
+    let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     let locationsDataSource = LocationsDataSource()
     var reminder: Reminder?
