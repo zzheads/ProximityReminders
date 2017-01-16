@@ -21,7 +21,6 @@ class DetailViewController: UIViewController {
     let locationsDataSource = DataSource()
     var reminder: Reminder?
     var delegate: UpdateChangesDelegate?
-    var isUpdate: Bool = false
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var inOutControl: UISegmentedControl!
@@ -57,7 +56,6 @@ class DetailViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         guard
-            let reminder = self.reminder,
             let title = self.titleTextField.text,
             let message = self.messageTextField.text,
             let inOut = InOut(rawValue: self.inOutControl.selectedSegmentIndex)
@@ -66,8 +64,7 @@ class DetailViewController: UIViewController {
         }
         let location = self.locationsDataSource.locations[self.locationPickerView.selectedRow(inComponent: 0)]
         
-        switch isUpdate {
-        case true:
+        if let reminder = self.reminder {
             do {
                 self.realm.beginWrite()
                 reminder.title = title
@@ -78,8 +75,8 @@ class DetailViewController: UIViewController {
             } catch {
                 print("Error saving reminder: \(error)")
             }
-            
-        case false:
+        } else {
+            let reminder = Reminder()
             reminder.title = title
             reminder.inOut = inOut
             reminder.message = message
@@ -92,7 +89,6 @@ class DetailViewController: UIViewController {
             } catch {
                 print("Error saving reminder: \(error)")
             }
-            
         }
         
         if let delegate = self.delegate {

@@ -32,14 +32,11 @@ extension MasterViewController {
         case "addReminder":
             let controller = segue.destination as! DetailViewController
             controller.delegate = self
-            controller.isUpdate = false
-            controller.reminder = Reminder()
         case "editReminder":
             let controller = segue.destination as! DetailViewController
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let reminder = self.dataSource.reminders[indexPath.row]
                 controller.reminder = reminder
-                controller.isUpdate = true
             }
             controller.delegate = self
         case "editLocations":

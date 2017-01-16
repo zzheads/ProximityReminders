@@ -12,11 +12,18 @@ import CoreLocation
 import MapKit
 
 class Location: Object {
+    dynamic var uuid = UUID().uuidString
     dynamic var latitude: Double = Double.nan
     dynamic var longitude: Double = Double.nan
     dynamic var title: String = ""
     dynamic var address: String?
     dynamic var placemark: String?
+    
+    let reminders = LinkingObjects(fromType: Reminder.self, property: "location")
+    
+    override static func primaryKey() -> String? {
+        return "uuid"
+    }
 }
 
 extension Location {

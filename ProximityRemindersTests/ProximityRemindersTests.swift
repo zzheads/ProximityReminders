@@ -11,18 +11,32 @@ import RealmSwift
 
 @testable import ProximityReminders
 class ProximityRemindersTests: XCTestCase {
+    var testLocation: Location!
+    var realm: Realm!
     
     override func setUp() {
+        self.testLocation = Location(value: [
+            "latitude": 37.33,
+            "longitude": -122.031,
+            "title": "Test Location"
+            ])
+        self.realm = try! Realm()
+        
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try! self.realm.write {
+            self.realm.deleteAll()
+        }
         super.tearDown()
     }
     
-    func testExample() {
+    func testUUID() {
+        try! self.realm.write {
+            self.realm.add(self.testLocation, update: true)
+        }
+        let retrivedLocation = self.realm.object(ofType: Location.self, forPrimaryKey: self.testLocation.uuid)
+        XCTAssert(retrivedLocation == self.testLocation, "Retrieved location is not equal to stored: \(retrivedLocation) != \(self.testLocation)")
     }
-    
 }
