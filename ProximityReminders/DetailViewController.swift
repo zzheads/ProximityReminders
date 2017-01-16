@@ -59,6 +59,8 @@ class DetailViewController: UIViewController {
         if let location = reminder.location, let index = self.locationsDataSource.locations.index(of: location) {
             self.locationPickerView.selectRow(index, inComponent: 0, animated: true)
             self.locationLabel.text = location.desc
+        } else {
+            
         }
     }
     

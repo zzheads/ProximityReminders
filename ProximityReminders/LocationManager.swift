@@ -18,4 +18,5 @@ class LocationManager: CLLocationManager {
         case .denied, .notDetermined, .restricted: return false
         }
     }
+    
 }

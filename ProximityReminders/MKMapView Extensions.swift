@@ -11,23 +11,8 @@ import MapKit
 import CoreLocation
 
 extension MKMapView {
-    func setCenter(location: Location) {
-        guard let coordinate = location.coordinate else {
-            return
-        }
-        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        self.setRegion(region, animated: true)
-    }
-    
-    func setCenter(annotation: MKPointAnnotation) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
-        self.setRegion(region, animated: true)
-    }
-
-    func setCenter(coordinate: CLLocationCoordinate2D) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+    func setCenter(coordinate: CLLocationCoordinate2D, coordinatesDelta: Double) {
+        let span = MKCoordinateSpan(latitudeDelta: coordinatesDelta, longitudeDelta: coordinatesDelta)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         self.setRegion(region, animated: true)
     }
@@ -39,5 +24,15 @@ extension MKMapView {
         span.longitudeDelta *= delta
         region.span = span
         self.setRegion(region, animated: true)
+    }
+    
+    func add(mapAnnotation: MapAnnotation) {
+        self.addAnnotation(mapAnnotation)
+        self.add(mapAnnotation.circle)
+    }
+    
+    func remove(mapAnnotation: MapAnnotation) {
+        self.removeAnnotation(mapAnnotation)
+        self.remove(mapAnnotation.circle)
     }
 }

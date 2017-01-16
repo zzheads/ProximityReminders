@@ -18,6 +18,7 @@ class Location: Object {
     dynamic var title: String = ""
     dynamic var address: String = ""
     dynamic var placemark: String = ""
+    dynamic var radius: Double = 50.0
     
     let reminders = LinkingObjects(fromType: Reminder.self, property: "location")
     

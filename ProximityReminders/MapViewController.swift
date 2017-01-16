@@ -16,6 +16,21 @@ class MapViewController: UIViewController {
     let realm = RealmManager.sharedInstance
     let locationManager = LocationManager.sharedInstance
     let geocoder = CLGeocoder()
+    weak var annotation: MapAnnotation? {
+        willSet {
+            guard let annotation = self.annotation else {
+                return
+            }
+            self.mapView.remove(mapAnnotation: annotation)
+        }
+        didSet {
+            guard let annotation = self.annotation else {
+                return
+            }
+            self.mapView.add(mapAnnotation: annotation)
+            self.mapView.setCenter(coordinate: annotation.coordinate, coordinatesDelta: AppMap.DELTA_FOR_COORDINATES)
+        }
+    }
     
     var location: Location?
     
@@ -27,6 +42,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         self.locationManager.delegate = self
+        self.mapView.delegate = self
 
         if (!self.locationManager.isAuthorized) {
             locationManager.requestAlwaysAuthorization()
@@ -48,11 +64,7 @@ class MapViewController: UIViewController {
         self.placemarkTextField.text = location.placemark
         if let coordinate = location.coordinate {
             self.coordinateTextField.text = "\(coordinate.latitude), \(coordinate.longitude)"
-            let annotation = MKPointAnnotation()
-            annotation.title = location.title
-            annotation.coordinate = coordinate
-            self.mapView.addAnnotation(annotation)
-            self.mapView.setCenter(location: location)
+            self.annotation = MapAnnotation(coordinate: coordinate, radius: location.radius)
         }
     }
     
@@ -108,11 +120,7 @@ class MapViewController: UIViewController {
         self.coordinateTextField.text = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
         self.placemarkTextField.text = placemark.name
         self.addressTextField.text = placemark.address
-        let annotation = MKPointAnnotation()
-        annotation.title = self.titleTextField.text
-        annotation.coordinate = location.coordinate
-        self.mapView.addAnnotation(annotation)
-        self.mapView.setCenter(coordinate: location.coordinate)
+        self.annotation = MapAnnotation(coordinate: location.coordinate, radius: 50.0)
     }
 }
 
@@ -137,11 +145,7 @@ extension MapViewController: CLLocationManagerDelegate {
             }
             self.placemarkTextField.text = placemark.name
             self.addressTextField.text = placemark.thoroughfare! + "," + placemark.locality! + "," + placemark.country!
-            let annotation = MKPointAnnotation()
-            annotation.title = self.titleTextField.text
-            annotation.coordinate = currentLocation.coordinate
-            self.mapView.addAnnotation(annotation)
-            self.mapView.setCenter(annotation: annotation)
+            self.annotation = MapAnnotation(coordinate: currentLocation.coordinate, radius: 50.0)
         }
     }
     
@@ -215,5 +219,14 @@ extension MapViewController {
     
     func dismiss(animated: Bool) {
         _ = navigationController?.popViewController(animated: animated)
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let circleView = MKCircleRenderer(overlay: overlay)
+        circleView.strokeColor = AppColor.BlueDark.color
+        circleView.fillColor = AppColor.BlueLighten.color
+        return circleView
     }
 }
