@@ -225,8 +225,9 @@ extension MapViewController {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let circleView = MKCircleRenderer(overlay: overlay)
+        circleView.lineWidth = 2.0
         circleView.strokeColor = AppColor.BlueDark.color
-        circleView.fillColor = AppColor.BlueLighten.color
+        circleView.fillColor = AppColor.BlueLighten.color.with(alpha: 0.2)
         return circleView
     }
 }

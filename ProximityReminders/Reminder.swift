@@ -36,3 +36,10 @@ extension Reminder {
         }
     }    
 }
+
+extension Reminder {
+    var region: CLRegion {
+        let region = CLRegion()
+        return region
+    }
+}

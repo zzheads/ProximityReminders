@@ -12,7 +12,9 @@
         <scene sceneID="JIb-Cz-RjN">
             <objects>
                 <navigationController id="HcY-dn-P13" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="VOg-zT-2Te">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="VOg-zT-2Te">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,7 +130,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Locations" id="Lh2-l8-sLj">
-                        <barButtonItem key="backBarButtonItem" title=" " id="7Jk-fq-zSK"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VV-d5-MUV">
                             <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

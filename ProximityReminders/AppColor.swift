@@ -26,3 +26,14 @@ enum AppColor {
         }
     }
 }
+
+extension UIColor {
+    func with(alpha: CGFloat) -> UIColor {
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var oldAlpha: CGFloat = 0.0
+        self.getRed(&red, green: &green, blue: &blue, alpha: &oldAlpha)
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
+}

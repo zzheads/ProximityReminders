@@ -24,6 +24,10 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Required permission of using location </string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
