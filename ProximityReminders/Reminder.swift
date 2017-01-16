@@ -38,8 +38,14 @@ extension Reminder {
 }
 
 extension Reminder {
-    var region: CLRegion {
-        let region = CLRegion()
+    var region: CLRegion? {
+        guard
+            let location = self.location,
+            let coordinate = location.coordinate
+            else {
+            return nil
+        }
+        let region = CLCircularRegion(center: coordinate, radius: location.radius, identifier: location.uuid)
         return region
     }
 }

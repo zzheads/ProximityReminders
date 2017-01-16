@@ -36,6 +36,7 @@
 		A64E1FFB1E2CE828008793DF /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64E1FFA1E2CE828008793DF /* MapAnnotation.swift */; };
 		A64E1FFD1E2CEDD1008793DF /* AppMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64E1FFC1E2CEDD1008793DF /* AppMap.swift */; };
 		A64E20011E2CFE54008793DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64E20001E2CFE54008793DF /* MapKit.framework */; };
+		A64E20031E2CFEF5008793DF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64E20021E2CFEF5008793DF /* CoreLocation.framework */; };
 		A67C3D471E2828780016BF0A /* icon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D461E2828780016BF0A /* icon_180.png */; };
 		A67C3D491E2828A90016BF0A /* icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D481E2828A90016BF0A /* icon_80.png */; };
 		A67C3D4D1E2829960016BF0A /* icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = A67C3D4A1E2829960016BF0A /* icon_29.png */; };
@@ -107,6 +108,7 @@
 		A64E1FFC1E2CEDD1008793DF /* AppMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMap.swift; sourceTree = "<group>"; };
 		A64E1FFE1E2CFE4B008793DF /* ProximityReminders.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProximityReminders.entitlements; sourceTree = "<group>"; };
 		A64E20001E2CFE54008793DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A64E20021E2CFEF5008793DF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A67C3D461E2828780016BF0A /* icon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_180.png; sourceTree = "<group>"; };
 		A67C3D481E2828A90016BF0A /* icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80.png; sourceTree = "<group>"; };
 		A67C3D4A1E2829960016BF0A /* icon_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_29.png; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A64E20031E2CFEF5008793DF /* CoreLocation.framework in Frameworks */,
 				A643F5631E28225F000DF7E8 /* RealmSwift.framework in Frameworks */,
 				A64E20011E2CFE54008793DF /* MapKit.framework in Frameworks */,
 				A643F5611E28225F000DF7E8 /* Realm.framework in Frameworks */,
@@ -254,6 +257,7 @@
 		A64E1FFF1E2CFE54008793DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A64E20021E2CFEF5008793DF /* CoreLocation.framework */,
 				A64E20001E2CFE54008793DF /* MapKit.framework */,
 			);
 			name = Frameworks;

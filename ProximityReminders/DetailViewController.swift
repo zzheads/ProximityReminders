@@ -102,7 +102,7 @@ class DetailViewController: UIViewController {
             }
         }
         
-        print("Saving reminder: \(self.reminder)")
+        //print("Saving reminder: \(self.reminder)")
         self.dismiss(animated: true)
     }
     
