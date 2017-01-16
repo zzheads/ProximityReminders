@@ -32,9 +32,7 @@ class MasterViewController: UITableViewController {
                 tableView.reloadData()
                 break
             case .update(let reminders, let deletions, let insertions, let modifications):
-                DispatchQueue.main.async {
-                    LocationManager.sharedInstance.refreshNotifications(with: reminders)
-                }
+                LocationManager.sharedInstance.refreshNotifications(with: reminders)
                 tableView.beginUpdates()
                 tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
                 tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
@@ -53,6 +51,7 @@ class MasterViewController: UITableViewController {
     }
     
     deinit {
+        self.locationManager.stopAllNotifications()
         self.notificationToken?.stop()
     }
 }

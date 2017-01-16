@@ -9,6 +9,10 @@
 import Foundation
 import RealmSwift
 
-class RealmManager {
-    static let sharedInstance = try! Realm()    
+class RealmManager: NSObject {
+    static let sharedInstance = try! Realm()
+    
+    override init() {
+        super.init()
+    }
 }
