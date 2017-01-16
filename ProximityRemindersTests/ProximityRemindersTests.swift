@@ -12,6 +12,7 @@ import RealmSwift
 @testable import ProximityReminders
 class ProximityRemindersTests: XCTestCase {
     var testLocation: Location!
+    var testReminder: Reminder!
     var realm: Realm!
     
     override func setUp() {
@@ -20,7 +21,13 @@ class ProximityRemindersTests: XCTestCase {
             "longitude": -122.031,
             "title": "Test Location"
             ])
-        self.realm = try! Realm()
+        
+        self.testReminder = Reminder()
+        self.testReminder.title = "Test Reminder"
+        self.testReminder.location = self.testLocation
+        self.testReminder.inOut = .Out
+        
+        self.realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "MyInMemoryRealm"))
         
         super.setUp()
     }
@@ -38,5 +45,14 @@ class ProximityRemindersTests: XCTestCase {
         }
         let retrivedLocation = self.realm.object(ofType: Location.self, forPrimaryKey: self.testLocation.uuid)
         XCTAssert(retrivedLocation == self.testLocation, "Retrieved location is not equal to stored: \(retrivedLocation) != \(self.testLocation)")
+    }
+    
+    func testInverse() {
+        print("Location: \(self.testLocation.reminders)")
+        try! self.realm.write {
+            self.realm.add(self.testReminder)
+        }
+        print("\n\n\n\n\n\n\n\nREMINDER: \(self.testReminder)")
+        print("\n\n\n\n\n\n\n\nLocation: \(self.testLocation.reminders.count)")
     }
 }

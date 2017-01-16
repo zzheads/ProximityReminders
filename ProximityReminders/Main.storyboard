@@ -14,9 +14,14 @@
                 <navigationController id="HcY-dn-P13" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VOg-zT-2Te">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="VOg-zT-2Te">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.029774425550000001" green="0.44785410170000001" blue="0.6293888688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="GmN-Y1-QfP" kind="relationship" relationship="rootViewController" id="bkH-tI-Q0h"/>
@@ -33,10 +38,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KbO-zY-StV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <color key="sectionIndexBackgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderCell" textLabel="mjk-xG-f10" style="IBUITableViewCellStyleDefault" id="jRK-kH-0Bf">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -48,17 +51,15 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mjk-xG-f10">
                                             <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                             <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="oxg-5x-51J" kind="show" identifier="editReminder" id="GLj-He-Ccq"/>
                                 </connections>
@@ -72,13 +73,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Reminders" id="ejw-6d-kFP">
                         <barButtonItem key="leftBarButtonItem" title="Locations" style="done" id="yG9-h8-aar">
-                            <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="ksy-bE-fEb" kind="show" identifier="editLocations" id="OtF-8h-gtL"/>
+                                <segue destination="VpW-CX-25M" kind="show" identifier="manageLocations" id="XU9-CV-vgp"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZwD-FW-NPJ">
-                            <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="oxg-5x-51J" kind="show" identifier="addReminder" id="wbR-zy-cmb"/>
                             </connections>
@@ -90,7 +91,59 @@
             </objects>
             <point key="canvasLocation" x="202" y="-209"/>
         </scene>
-        <!--Construct Location-->
+        <!--Locations-->
+        <scene sceneID="psb-Dq-ydz">
+            <objects>
+                <tableViewController id="VpW-CX-25M" customClass="LocationsTableViewController" customModule="ProximityReminders" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TFY-pX-ttF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" textLabel="ysL-x1-Mhg" style="IBUITableViewCellStyleDefault" id="e0k-QT-b37">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e0k-QT-b37" id="K4w-pk-p2z">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ysL-x1-Mhg">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                            <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="ksy-bE-fEb" kind="show" identifier="editLocation" id="tGa-YU-tqW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VpW-CX-25M" id="1gR-WK-u9n"/>
+                            <outlet property="delegate" destination="VpW-CX-25M" id="z8X-CY-kz2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Locations" id="Lh2-l8-sLj">
+                        <barButtonItem key="backBarButtonItem" title=" " id="7Jk-fq-zSK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VV-d5-MUV">
+                            <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="ksy-bE-fEb" kind="show" identifier="createLocation" id="rvQ-sF-9oO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ixs-8C-4Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="568"/>
+        </scene>
+        <!--Edit Location-->
         <scene sceneID="v6G-wb-bfd">
             <objects>
                 <viewController id="ksy-bE-fEb" customClass="MapViewController" customModule="ProximityReminders" customModuleProvider="target" sceneMemberID="viewController">
@@ -199,14 +252,14 @@
                                     <action selector="currentLocationPressed" destination="ksy-bE-fEb" eventType="touchUpInside" id="xU3-Vq-WzW"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" tag="50" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Aqo-qg-Cwb">
+                            <stepper opaque="NO" clipsSubviews="YES" tag="50" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Aqo-qg-Cwb">
                                 <rect key="frame" x="265" y="586" width="94" height="29"/>
                                 <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="LzB-6L-Gvc"/>
                                     <constraint firstAttribute="width" constant="94" id="nhl-zU-3xr"/>
                                 </constraints>
-                                <color key="tintColor" red="0.61658728119999995" green="0.54182654620000004" blue="0.78159064050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.45686820722250365" green="0.40419638266930291" blue="0.58713077374873102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="zoomMapStepperChanged:" destination="ksy-bE-fEb" eventType="valueChanged" id="P2z-5f-bHb"/>
                                 </connections>
@@ -251,15 +304,15 @@
                             <constraint firstAttribute="trailing" secondItem="yok-YV-oyU" secondAttribute="trailing" constant="16" id="ziZ-as-kQO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Construct Location" id="0Zj-z8-lhc">
+                    <navigationItem key="navigationItem" title="Edit Location" id="0Zj-z8-lhc">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5hy-NZ-bex">
-                            <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelPressed:" destination="ksy-bE-fEb" id="rCC-wJ-9il"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Yxw-YC-AQn">
-                            <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="donePressed:" destination="ksy-bE-fEb" id="K69-kH-stp"/>
                             </connections>
@@ -275,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2MP-fN-ARL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200.80000000000001" y="553.67316341829087"/>
+            <point key="canvasLocation" x="974" y="568"/>
         </scene>
         <!--Detail-->
         <scene sceneID="eEh-pN-kfk">
@@ -339,6 +392,7 @@
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W8I-oa-rPt">
                                 <rect key="frame" x="110" y="115" width="78" height="29"/>
+                                <color key="backgroundColor" red="0.80886739490000004" green="0.77278232570000005" blue="0.88971918819999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="1hQ-2F-kJn"/>
                                     <constraint firstAttribute="width" constant="78" id="XXJ-Lc-0zx"/>
@@ -347,10 +401,10 @@
                                     <segment title="In"/>
                                     <segment title="Out"/>
                                 </segments>
-                                <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.61658728119999995" green="0.54182654620000004" blue="0.78159064050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OS-ve-TxP">
-                                <rect key="frame" x="16" y="226" width="343" height="389"/>
+                                <rect key="frame" x="16" y="226" width="343" height="89.5"/>
                                 <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pickerView>
@@ -381,16 +435,43 @@
                                 <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qNF-aS-kVs">
+                                <rect key="frame" x="163" y="319" width="51" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="KGg-PA-KXB"/>
+                                    <constraint firstAttribute="height" constant="30" id="Tp0-2O-XAG"/>
+                                    <constraint firstAttribute="width" constant="49" id="eAC-wd-VJE"/>
+                                </constraints>
+                                <color key="tintColor" red="0.61658728119999995" green="0.54182654620000004" blue="0.78159064050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="onTintColor" red="0.61658728119999995" green="0.54182654620000004" blue="0.78159064050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.80886739490000004" green="0.77278232570000005" blue="0.88971918819999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run reminder?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yct-xn-YUW">
+                                <rect key="frame" x="16" y="323" width="131" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Wme-Hd-p9c"/>
+                                    <constraint firstAttribute="height" constant="21" id="eoK-qX-ng1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="131" id="w2I-y7-wWM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                <color key="textColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85756653549999995" green="0.83902394769999999" blue="0.87335842850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZWi-9t-gUi" firstAttribute="leading" secondItem="CaL-tS-el6" secondAttribute="trailing" constant="8" id="1o3-5p-4CF"/>
+                            <constraint firstItem="1OS-ve-TxP" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="3fN-Us-Y5p"/>
                             <constraint firstItem="34A-uh-3Ya" firstAttribute="leading" secondItem="Go9-w8-mwW" secondAttribute="trailing" constant="8" id="3zR-HC-XA9"/>
                             <constraint firstItem="1OS-ve-TxP" firstAttribute="top" secondItem="kiS-5C-PkC" secondAttribute="bottom" constant="8" id="4KV-Ap-qnh"/>
+                            <constraint firstItem="qNF-aS-kVs" firstAttribute="centerX" secondItem="WOk-nO-COZ" secondAttribute="centerX" id="DHF-w7-p6r"/>
                             <constraint firstAttribute="trailing" secondItem="ZWi-9t-gUi" secondAttribute="trailing" constant="16" id="HIF-Kz-gvs"/>
+                            <constraint firstItem="Yct-xn-YUW" firstAttribute="centerY" secondItem="WOk-nO-COZ" secondAttribute="centerY" id="IxF-dQ-UgS"/>
                             <constraint firstItem="kiS-5C-PkC" firstAttribute="leading" secondItem="aeT-xv-RlT" secondAttribute="trailing" constant="8" id="LpV-gG-pDP"/>
                             <constraint firstItem="W8I-oa-rPt" firstAttribute="top" secondItem="ZWi-9t-gUi" secondAttribute="bottom" constant="8" id="Mq5-wt-fAZ"/>
+                            <constraint firstItem="qNF-aS-kVs" firstAttribute="top" secondItem="1OS-ve-TxP" secondAttribute="bottom" constant="4" id="RH2-Qq-lxZ"/>
                             <constraint firstAttribute="trailing" secondItem="34A-uh-3Ya" secondAttribute="trailing" constant="16" id="RQq-YZ-cK5"/>
+                            <constraint firstAttribute="trailing" secondItem="1OS-ve-TxP" secondAttribute="trailing" constant="16" id="WMO-RQ-lBg"/>
                             <constraint firstItem="1OS-ve-TxP" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="WOt-IH-iDp"/>
                             <constraint firstItem="Go9-w8-mwW" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="X2d-wW-Ewj"/>
                             <constraint firstItem="aeT-xv-RlT" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="an0-bz-bn7"/>
@@ -399,26 +480,28 @@
                             <constraint firstItem="CaL-tS-el6" firstAttribute="top" secondItem="kcB-g2-jyG" secondAttribute="bottom" constant="18" id="dWr-KN-8fz"/>
                             <constraint firstItem="W8I-oa-rPt" firstAttribute="leading" secondItem="FQu-Px-p4G" secondAttribute="trailing" constant="8" id="dem-cx-ly4"/>
                             <constraint firstAttribute="trailing" secondItem="kiS-5C-PkC" secondAttribute="trailing" constant="16" id="dyK-Cz-tJk"/>
+                            <constraint firstItem="1OS-ve-TxP" firstAttribute="top" secondItem="kiS-5C-PkC" secondAttribute="bottom" constant="8" id="h6X-h4-eA9"/>
                             <constraint firstItem="aeT-xv-RlT" firstAttribute="top" secondItem="Go9-w8-mwW" secondAttribute="bottom" constant="16" id="hJS-mB-f75"/>
                             <constraint firstItem="34A-uh-3Ya" firstAttribute="top" secondItem="W8I-oa-rPt" secondAttribute="bottom" constant="8" id="j03-mQ-6i3"/>
+                            <constraint firstItem="Yct-xn-YUW" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="knB-RW-vIy"/>
                             <constraint firstAttribute="trailing" secondItem="1OS-ve-TxP" secondAttribute="trailing" constant="16" id="n3a-xe-ADj"/>
+                            <constraint firstItem="qNF-aS-kVs" firstAttribute="centerY" secondItem="WOk-nO-COZ" secondAttribute="centerY" id="o8T-uP-aC0"/>
                             <constraint firstItem="ZWi-9t-gUi" firstAttribute="top" secondItem="kcB-g2-jyG" secondAttribute="bottom" constant="13" id="qUQ-FL-eup"/>
                             <constraint firstItem="Go9-w8-mwW" firstAttribute="top" secondItem="FQu-Px-p4G" secondAttribute="bottom" constant="16" id="wAw-Iq-oUT"/>
                             <constraint firstItem="CaL-tS-el6" firstAttribute="leading" secondItem="WOk-nO-COZ" secondAttribute="leading" constant="16" id="wP0-Yr-TUy"/>
                             <constraint firstItem="kiS-5C-PkC" firstAttribute="top" secondItem="34A-uh-3Ya" secondAttribute="bottom" constant="8" id="wUQ-VD-IwY"/>
-                            <constraint firstItem="UHx-mn-Obc" firstAttribute="top" secondItem="1OS-ve-TxP" secondAttribute="bottom" constant="8" id="xSg-Qx-elW"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Edit Reminder" id="tLw-My-qhE">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MIK-X5-XaF">
-                            <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelPressed:" destination="oxg-5x-51J" id="LfN-2H-l63"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="pQN-RW-FGv">
-                            <color key="tintColor" red="0.0052426555189999998" green="0.29017603400000003" blue="0.4082992077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.7566004395" green="0.91120022540000001" blue="0.96921712159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="donePressed:" destination="oxg-5x-51J" id="jk6-mG-7mB"/>
                             </connections>
@@ -430,6 +513,7 @@
                         <outlet property="locationLabel" destination="kiS-5C-PkC" id="hB6-nw-QGN"/>
                         <outlet property="locationPickerView" destination="1OS-ve-TxP" id="w0x-iV-6Qa"/>
                         <outlet property="messageTextField" destination="34A-uh-3Ya" id="1bd-gJ-Mun"/>
+                        <outlet property="runSwitch" destination="qNF-aS-kVs" id="UPJ-l3-1dj"/>
                         <outlet property="titleTextField" destination="ZWi-9t-gUi" id="63J-2p-uWL"/>
                     </connections>
                 </viewController>
@@ -440,5 +524,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wbR-zy-cmb"/>
+        <segue reference="tGa-YU-tqW"/>
     </inferredMetricsTieBreakers>
 </document>

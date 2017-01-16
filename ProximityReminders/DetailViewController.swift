@@ -9,44 +9,52 @@
 import Foundation
 import UIKit
 import MapKit
-
-protocol UpdateChangesDelegate {
-    func updateChanges()
-}
+import RealmSwift
 
 class DetailViewController: UIViewController {
     let realm = RealmManager.sharedInstance
     let locationManager = LocationManager.sharedInstance
     let geocoder = CLGeocoder()
-    let locationsDataSource = DataSource()
+    let locationsDataSource = LocationsDataSource()
     var reminder: Reminder?
-    var delegate: UpdateChangesDelegate?
+    var notificationToken: NotificationToken?
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var inOutControl: UISegmentedControl!
     @IBOutlet weak var locationPickerView: UIPickerView!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var runSwitch: UISwitch!
+    
+    deinit {
+        self.notificationToken?.stop()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationPickerView.dataSource = self.locationsDataSource
+        self.locationPickerView.delegate = self
+
         self.configureView()
+
+        self.notificationToken = self.locationsDataSource.locations.addNotificationBlock({ (changes) in
+            self.locationPickerView.reloadAllComponents()
+        })
     }
     
     private func configureView() {
+        if (!self.locationManager.isAuthorized) {
+            self.locationManager.requestAlwaysAuthorization()
+        }
+        
         guard let reminder = self.reminder else {
             return
         }
         self.titleTextField.text = reminder.title
         self.messageTextField.text = reminder.message
         self.inOutControl.selectedSegmentIndex = reminder.inOut.rawValue
-        
-        if (!self.locationManager.isAuthorized) {
-            self.locationManager.requestAlwaysAuthorization()
-        }
-        
-        self.locationPickerView.dataSource = self.locationsDataSource
-        self.locationPickerView.delegate = self
+        self.runSwitch.isOn = reminder.isRun
         
         if let location = reminder.location, let index = self.locationsDataSource.locations.index(of: location) {
             self.locationPickerView.selectRow(index, inComponent: 0, animated: true)
@@ -71,6 +79,7 @@ class DetailViewController: UIViewController {
                 reminder.inOut = inOut
                 reminder.message = message
                 reminder.location = location
+                reminder.isRun = self.runSwitch.isOn
                 try self.realm.commitWrite()
             } catch {
                 print("Error saving reminder: \(error)")
@@ -81,7 +90,7 @@ class DetailViewController: UIViewController {
             reminder.inOut = inOut
             reminder.message = message
             reminder.location = location
-            
+            reminder.isRun = self.runSwitch.isOn
             do {
                 try self.realm.write {
                     self.realm.add(reminder)
@@ -91,9 +100,6 @@ class DetailViewController: UIViewController {
             }
         }
         
-        if let delegate = self.delegate {
-            delegate.updateChanges()
-        }
         print("Saving reminder: \(self.reminder)")
         self.dismiss(animated: true)
     }
@@ -112,7 +118,7 @@ extension DetailViewController {
 extension DetailViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let location = self.locationsDataSource.locations[row]
-        let title = "\(location.title) at \(location.address!)(\(location.coordinate))"
+        let title = "\(location.title) at \(location.address)(\(location.coordinate))"
         if (view == nil) {
             let label = UILabel()
             label.text = title

@@ -1,23 +1,24 @@
 //
-//  ViewController.swift
+//  LocationsTableViewController.swift
 //  ProximityReminders
 //
-//  Created by Alexey Papin on 12.01.17.
+//  Created by Alexey Papin on 16.01.17.
 //  Copyright © 2017 zzheads. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import RealmSwift
 
-class MasterViewController: UITableViewController {
+class LocationsTableViewController: UITableViewController {
     var notificationToken: NotificationToken?
     let realm = RealmManager.sharedInstance
-    let dataSource = RemindersDataSource()
+    let dataSource = LocationsDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self.dataSource
-        self.notificationToken = self.dataSource.reminders.addNotificationBlock({ [weak self](changes: RealmCollectionChange) in
+        self.notificationToken = self.dataSource.locations.addNotificationBlock({ [weak self](changes: RealmCollectionChange) in
             guard let tableView = self?.tableView else {
                 return
             }
@@ -38,7 +39,7 @@ class MasterViewController: UITableViewController {
             }
         })
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -48,16 +49,16 @@ class MasterViewController: UITableViewController {
     }
 }
 
-extension MasterViewController {
+extension LocationsTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueIdentifier = segue.identifier else {
             return
         }
-        if (segueIdentifier == "editReminder") {
-            let controller = segue.destination as! DetailViewController
+        if (segueIdentifier == "editLocation") {
+            let controller = segue.destination as! MapViewController
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let reminder = self.dataSource.reminders[indexPath.row]
-                controller.reminder = reminder
+                let location = self.dataSource.locations[indexPath.row]
+                controller.location = location
             }
         }
     }

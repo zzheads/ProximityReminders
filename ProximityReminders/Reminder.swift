@@ -16,9 +16,10 @@ class Reminder: Object, TypeHasCell {
     dynamic var location: Location?
     fileprivate dynamic var inOutValue: Int = 2
     dynamic var message: String = ""
+    dynamic var isRun: Bool = false
     
     override static func primaryKey() -> String? {
-        return "id"
+        return "uuid"
     }
 }
 

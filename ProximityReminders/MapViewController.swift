@@ -16,12 +16,8 @@ class MapViewController: UIViewController {
     let realm = RealmManager.sharedInstance
     let locationManager = LocationManager.sharedInstance
     let geocoder = CLGeocoder()
-
-    var locations: Results<Location> {
-        get {
-            return self.realm.objects(Location.self)
-        }
-    }
+    
+    var location: Location?
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
@@ -36,17 +32,28 @@ class MapViewController: UIViewController {
             locationManager.requestAlwaysAuthorization()
         }
         
-        for location in self.locations {
-            if let pointAnnotation = location.pointAnnotation {
-                self.mapView.addAnnotation(pointAnnotation)
-            }
-        }
-        if let lastLocation = self.locations.last {
-            self.mapView.setCenter(location: lastLocation)
-        }
         self.addressTextField.addTarget(self, action: #selector(self.addressEntered(sender:)), for: [.editingDidEnd, .editingDidEndOnExit])
         self.placemarkTextField.addTarget(self, action: #selector(self.addressEntered(sender:)), for: [.editingDidEnd, .editingDidEndOnExit])
         self.coordinateTextField.addTarget(self, action: #selector(self.coordinatesEntered), for: [.editingDidEnd, .editingDidEndOnExit])
+        
+        self.configureView()
+    }
+    
+    private func configureView() {
+        guard let location = self.location else {
+            return
+        }
+        self.titleTextField.text = location.title
+        self.addressTextField.text = location.address
+        self.placemarkTextField.text = location.placemark
+        if let coordinate = location.coordinate {
+            self.coordinateTextField.text = "\(coordinate.latitude), \(coordinate.longitude)"
+            let annotation = MKPointAnnotation()
+            annotation.title = location.title
+            annotation.coordinate = coordinate
+            self.mapView.addAnnotation(annotation)
+            self.mapView.setCenter(location: location)
+        }
     }
     
     func addressEntered(sender: UITextField) {
@@ -159,19 +166,34 @@ extension MapViewController {
                 return
         }
 
-        let newLocation = Location()
-        newLocation.title = title
-        newLocation.address = address
-        newLocation.placemark = placemark
-        newLocation.coordinate = lastAnnotation.coordinate
-        
-        do {
-            try self.realm.write {
-                self.realm.add(newLocation)
+        if let location = self.location {
+            do {
+                self.realm.beginWrite()
+                location.title = title
+                location.address = address
+                location.placemark = placemark
+                location.coordinate = lastAnnotation.coordinate
+                try self.realm.commitWrite()
+            } catch {
+                print("Error of saving location: \(error)")
+                return
             }
-        } catch {
-            print("Error of saving location: \(error)")
-            return
+            
+        } else {
+            let newLocation = Location()
+            newLocation.title = title
+            newLocation.address = address
+            newLocation.placemark = placemark
+            newLocation.coordinate = lastAnnotation.coordinate
+        
+            do {
+                try self.realm.write {
+                    self.realm.add(newLocation)
+                }
+            } catch {
+                print("Error of saving location: \(error)")
+                return
+            }
         }
         self.dismiss(animated: true)
     }

@@ -16,8 +16,8 @@ class Location: Object {
     dynamic var latitude: Double = Double.nan
     dynamic var longitude: Double = Double.nan
     dynamic var title: String = ""
-    dynamic var address: String?
-    dynamic var placemark: String?
+    dynamic var address: String = ""
+    dynamic var placemark: String = ""
     
     let reminders = LinkingObjects(fromType: Reminder.self, property: "location")
     

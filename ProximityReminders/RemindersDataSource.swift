@@ -1,8 +1,8 @@
 //
-//  DataSource.swift
+//  RemindersDataSource.swift
 //  ProximityReminders
 //
-//  Created by Alexey Papin on 15.01.17.
+//  Created by Alexey Papin on 16.01.17.
 //  Copyright © 2017 zzheads. All rights reserved.
 //
 
@@ -10,17 +10,14 @@ import Foundation
 import RealmSwift
 import UIKit
 
-class DataSource: NSObject {
+class RemindersDataSource: NSObject {
     let realm = RealmManager.sharedInstance
     var reminders: Results<Reminder> {
         return self.realm.objects(Reminder.self)
     }
-    var locations: Results<Location> {
-        return self.realm.objects(Location.self)
-    }
 }
 
-extension DataSource: UITableViewDataSource {
+extension RemindersDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.reminders.count
     }
@@ -30,6 +27,9 @@ extension DataSource: UITableViewDataSource {
         let reminder = self.reminders[indexPath.row]
         cell.textLabel?.text = reminder.title
         cell.textLabel?.font = AppFont.Edit.font
+        if (reminder.isRun) {
+            cell.accessoryType = .checkmark
+        }
         return cell
     }
     
@@ -43,17 +43,6 @@ extension DataSource: UITableViewDataSource {
             try! self.realm.write {
                 self.realm.delete(reminder)
             }
-            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-    }
-}
-
-extension DataSource: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.locations.count
     }
 }
