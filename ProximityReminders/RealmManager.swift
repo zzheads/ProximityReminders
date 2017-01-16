@@ -10,5 +10,5 @@ import Foundation
 import RealmSwift
 
 class RealmManager {
-    static let sharedInstance = try! Realm()
+    static let sharedInstance = try! Realm()    
 }

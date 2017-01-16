@@ -45,7 +45,7 @@ extension Reminder {
             else {
             return nil
         }
-        let region = CLCircularRegion(center: coordinate, radius: location.radius, identifier: location.uuid)
+        let region = CLCircularRegion(center: coordinate, radius: location.radius, identifier: self.uuid)
         return region
     }
 }
