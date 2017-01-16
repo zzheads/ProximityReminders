@@ -12,7 +12,6 @@ import CoreLocation
 
 class MasterViewController: UITableViewController {
     var notificationToken: NotificationToken?
-    let realm = RealmManager.sharedInstance
     let dataSource = RemindersDataSource()
     let locationManager = LocationManager.sharedInstance
     
@@ -20,7 +19,7 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         self.locationManager.delegate = self
-        self.locationManager.startMonitoringSignificantLocationChanges()
+        self.locationManager.startUpdatingLocation()
         
         self.tableView.dataSource = self.dataSource
         self.notificationToken = self.dataSource.reminders.addNotificationBlock({ [weak self](changes: RealmCollectionChange) in
@@ -73,13 +72,14 @@ extension MasterViewController {
 
 extension MasterViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Location updated, last is: \(locations.last!.coordinate)")
+        //print("Location updated, last is: \(locations.last!.coordinate)")
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        guard let reminder = self.dataSource.realm.object(ofType: Reminder.self, forPrimaryKey: region.identifier) else {
+        let realm = try! Realm()
+        guard let reminder = realm.object(ofType: Reminder.self, forPrimaryKey: region.identifier) else {
             print("Strange, region is monitoring but reminder was not found. \(region)")
-            print("Reminders: \(self.dataSource.realm.objects(Reminder.self))")
+            print("Reminders: \(realm.objects(Reminder.self))")
             return
         }
         if (reminder.inOut == .Out) {
@@ -90,9 +90,10 @@ extension MasterViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        guard let reminder = self.dataSource.realm.object(ofType: Reminder.self, forPrimaryKey: region.identifier) else {
+        let realm = try! Realm()
+        guard let reminder = realm.object(ofType: Reminder.self, forPrimaryKey: region.identifier) else {
             print("Strange, region is monitoring but reminder was not found. \(region)")
-            print("Reminders: \(self.dataSource.realm.objects(Reminder.self))")
+            print("Reminders: \(realm.objects(Reminder.self))")
             return
         }
         if (reminder.inOut == .In) {

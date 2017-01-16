@@ -13,10 +13,9 @@ import MapKit
 import RealmSwift
 
 class MapViewController: UIViewController {
-    let realm = RealmManager.sharedInstance
     let locationManager = LocationManager.sharedInstance
     let geocoder = CLGeocoder()
-    weak var annotation: MapAnnotation? {
+    var annotation: MapAnnotation? {
         willSet {
             guard let annotation = self.annotation else {
                 return
@@ -32,7 +31,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    var location: Location?
+    weak var location: Location?
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
@@ -172,12 +171,13 @@ extension MapViewController {
 
         if let location = self.location {
             do {
-                self.realm.beginWrite()
+                let realm = try Realm()
+                realm.beginWrite()
                 location.title = title
                 location.address = address
                 location.placemark = placemark
                 location.coordinate = lastAnnotation.coordinate
-                try self.realm.commitWrite()
+                try realm.commitWrite()
             } catch {
                 print("Error of saving location: \(error)")
                 return
@@ -191,8 +191,9 @@ extension MapViewController {
             newLocation.coordinate = lastAnnotation.coordinate
         
             do {
-                try self.realm.write {
-                    self.realm.add(newLocation)
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(newLocation)
                 }
             } catch {
                 print("Error of saving location: \(error)")

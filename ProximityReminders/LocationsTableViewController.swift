@@ -12,7 +12,6 @@ import RealmSwift
 
 class LocationsTableViewController: UITableViewController {
     var notificationToken: NotificationToken?
-    let realm = RealmManager.sharedInstance
     let dataSource = LocationsDataSource()
     
     override func viewDidLoad() {

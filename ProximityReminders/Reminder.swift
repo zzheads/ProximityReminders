@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import CoreLocation
 
-class Reminder: Object, TypeHasCell {
+class Reminder: Object {
     dynamic var uuid = UUID().uuidString
     dynamic var title: String = ""
     dynamic var location: Location?

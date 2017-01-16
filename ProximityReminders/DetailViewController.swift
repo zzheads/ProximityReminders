@@ -12,7 +12,6 @@ import MapKit
 import RealmSwift
 
 class DetailViewController: UIViewController {
-    let realm = RealmManager.sharedInstance
     let locationManager = LocationManager.sharedInstance
     let geocoder = CLGeocoder()
     let locationsDataSource = LocationsDataSource()
@@ -76,13 +75,14 @@ class DetailViewController: UIViewController {
         
         if let reminder = self.reminder {
             do {
-                self.realm.beginWrite()
+                let realm = try Realm()
+                realm.beginWrite()
                 reminder.title = title
                 reminder.inOut = inOut
                 reminder.message = message
                 reminder.location = location
                 reminder.isRun = self.runSwitch.isOn
-                try self.realm.commitWrite()
+                try realm.commitWrite()
             } catch {
                 print("Error saving reminder: \(error)")
             }
@@ -94,8 +94,9 @@ class DetailViewController: UIViewController {
             reminder.location = location
             reminder.isRun = self.runSwitch.isOn
             do {
-                try self.realm.write {
-                    self.realm.add(reminder)
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(reminder)
                 }
             } catch {
                 print("Error saving reminder: \(error)")

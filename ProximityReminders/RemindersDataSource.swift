@@ -11,9 +11,10 @@ import RealmSwift
 import UIKit
 
 class RemindersDataSource: NSObject {
-    let realm = RealmManager.sharedInstance
     var reminders: Results<Reminder> {
-        return self.realm.objects(Reminder.self)
+        print("Creating realm! in reminders dataSource")
+        let realm = try! Realm()
+        return realm.objects(Reminder.self)
     }
 }
 
@@ -40,8 +41,13 @@ extension RemindersDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             let reminder = self.reminders[indexPath.row]
-            try! self.realm.write {
-                self.realm.delete(reminder)
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.delete(reminder)
+                }
+            } catch {
+                print("Realm error: \(error)")
             }
         }
     }
