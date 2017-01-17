@@ -128,7 +128,7 @@ extension DetailViewController: UIPickerViewDelegate {
         let title = "\(location.title) at \(location.address)(\(location.coordinate))"
         if (view == nil) {
             let label = UILabel()
-            label.text = title
+            label.text = " \(title)"
             label.font = AppFont.Edit.font
             label.textColor = AppColor.BlueDarken.color
             return label
