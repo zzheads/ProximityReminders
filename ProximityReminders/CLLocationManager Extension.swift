@@ -22,7 +22,7 @@ extension CLLocationManager {
     func stopAllNotifications() {
         for region in self.monitoredRegions {
             self.stopMonitoring(for: region)
-            print("Region: \(region) stopped monitoring...")
+            NSLog("Region: \(region) stopped monitoring...")
         }
     }
     
@@ -32,7 +32,7 @@ extension CLLocationManager {
             if (reminder.isRun) {
                 if let region = reminder.region {
                     self.startMonitoring(for: region)
-                    print("Region: \(region) started monitoring...")
+                    NSLog("Region: \(region) started monitoring...")
                 }
             }
         }

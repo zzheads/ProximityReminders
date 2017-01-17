@@ -53,7 +53,7 @@ extension LocationsDataSource: UITableViewDataSource {
                     self.realm.delete(location)
                 }
             } catch {
-                print("Realm error: \(error)")
+                ErrorHandler.show(title: "Realm database error", message: "\(error)", completionHandler: nil)
             }
         }
     }

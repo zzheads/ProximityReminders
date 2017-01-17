@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6151FE71E2D858C00E4D742 /* CLLocationManager Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6151FE61E2D858C00E4D742 /* CLLocationManager Extension.swift */; };
+		A6151FEB1E2E3C5500E4D742 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6151FEA1E2E3C5500E4D742 /* ErrorHandler.swift */; };
 		A643F53C1E281AF0000DF7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */; };
 		A643F53E1E281AF0000DF7E8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F53D1E281AF0000DF7E8 /* MasterViewController.swift */; };
 		A643F5461E281AF0000DF7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A643F5441E281AF0000DF7E8 /* LaunchScreen.storyboard */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		A6151FE61E2D858C00E4D742 /* CLLocationManager Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager Extension.swift"; sourceTree = "<group>"; };
+		A6151FEA1E2E3C5500E4D742 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		A643F5381E281AF0000DF7E8 /* ProximityReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProximityReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A643F53B1E281AF0000DF7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A643F53D1E281AF0000DF7E8 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6151FE91E2E3C0E00E4D742 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				A6151FEA1E2E3C5500E4D742 /* ErrorHandler.swift */,
+			);
+			name = Errors;
+			sourceTree = "<group>";
+		};
 		A643F52F1E281AF0000DF7E8 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		A643F53A1E281AF0000DF7E8 /* ProximityReminders */ = {
 			isa = PBXGroup;
 			children = (
+				A6151FE91E2E3C0E00E4D742 /* Errors */,
 				A64BE0CD1E29331B00A840BD /* Helpers */,
 				A647AA961E28EAD700298E57 /* Model */,
 				A647AA921E28E91000298E57 /* Controllers */,
@@ -400,6 +411,7 @@
 				A64E1FF51E2CCA9E008793DF /* LocationsTableViewController.swift in Sources */,
 				A64E1FF11E2C12CA008793DF /* CLPlacemark Extension.swift in Sources */,
 				A64BE0CF1E29332D00A840BD /* AppColor.swift in Sources */,
+				A6151FEB1E2E3C5500E4D742 /* ErrorHandler.swift in Sources */,
 				A64BE0D31E2A34C100A840BD /* AppFont.swift in Sources */,
 				A64E1FE71E2B63A7008793DF /* Location.swift in Sources */,
 				A64BE0DF1E2AD46A00A840BD /* MKMapView Extensions.swift in Sources */,

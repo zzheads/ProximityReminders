@@ -72,6 +72,7 @@ extension Reminder {
         let content = UNMutableNotificationContent()
         content.title = self.title
         content.body = self.message
+        content.categoryIdentifier = "OkAction"
         content.sound = UNNotificationSound.default()
         return content
     }
@@ -83,7 +84,7 @@ extension Reminder {
     
     func push(completionHandler: ((Error?) -> Void)?) {
         guard let request = self.request else {
-            print("Can not push notification! reminder: \(self)")
+            ErrorHandler.show(title: "Notification error", message: "Reminder \(self) detected location event, but can not send notification.", completionHandler: nil)
             return
         }
         UNUserNotificationCenter.current().add(request, withCompletionHandler: completionHandler)

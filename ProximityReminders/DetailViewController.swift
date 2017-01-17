@@ -83,7 +83,7 @@ class DetailViewController: UIViewController {
                 reminder.isRun = self.runSwitch.isOn
                 try realm.commitWrite()
             } catch {
-                print("Error saving reminder: \(error)")
+                ErrorHandler.show(title: "Error saving reminder", message: "\(error)", completionHandler: nil)
             }
         } else {
             let reminder = Reminder()
@@ -98,7 +98,7 @@ class DetailViewController: UIViewController {
                     realm.add(reminder)
                 }
             } catch {
-                print("Error saving reminder: \(error)")
+                ErrorHandler.show(title: "Error saving reminder", message: "\(error)", completionHandler: nil)
             }
         }
         

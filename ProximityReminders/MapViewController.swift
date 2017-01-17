@@ -92,7 +92,7 @@ class MapViewController: UIViewController {
         guard let latitude = Double(latitudeString),
             let longitude = Double(longitudeString)
             else {
-                print("Coordinates error: \(latitudeString), \(longitudeString) can not covert to \(Double(latitudeString)), \(Double(longitudeString))")
+                ErrorHandler.show(title: "Coordinates error", message: "\(latitudeString), \(longitudeString) unable covert to latitude, longitude numbers", completionHandler: nil)
                 return
         }
         print("\(latitude), \(longitude)")
@@ -109,9 +109,9 @@ class MapViewController: UIViewController {
             let location = placemark.location
             else {
                 if let error = error {
-                    print("Geocoding error: \(error)")
+                    ErrorHandler.show(title: "Geocoding error", message: "\(error)", completionHandler: nil)
                 } else {
-                    print("Unresolved error of geocoding")
+                    ErrorHandler.show(title: "Geocoding error", message: "Unresolved geocoding error", completionHandler: nil)
                 }
                 return
         }
@@ -125,7 +125,7 @@ class MapViewController: UIViewController {
 extension MapViewController {
     @IBAction func currentLocationPressed() {
         guard let location = self.locationManager.location else {
-            print("Can not retrieve location")
+            ErrorHandler.show(title: "Location error", message: "Can not retrieve location", completionHandler: nil)
             return
         }
         self.coordinateTextField.text = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
@@ -135,9 +135,9 @@ extension MapViewController {
                 let placemark = placemarks.first
                 else {
                     if let error = error {
-                        print("Geocode error: \(error)")
+                        ErrorHandler.show(title: "Geocoding error", message: "\(error)", completionHandler: nil)
                     } else {
-                        print("Unresolved geocode error")
+                        ErrorHandler.show(title: "Geocoding error", message: "Unresolved geocoding error", completionHandler: nil)
                     }
                     return
             }
@@ -154,8 +154,12 @@ extension MapViewController {
             let placemark = self.placemarkTextField.text,
             let lastAnnotation = self.mapView.annotations.last
             else {
-                print("Error: can't save location, additioanl information required, all fields must be filled.")
+                ErrorHandler.show(title: "Error saving location", message: "Additional information required, all fields must be filled.", completionHandler: nil)
                 return
+        }
+        if (title.isEmpty) {
+            ErrorHandler.show(title: "Error saving location", message: "Location must have a title.", completionHandler: nil)
+            return
         }
 
         if let location = self.location {
@@ -168,7 +172,7 @@ extension MapViewController {
                 location.coordinate = lastAnnotation.coordinate
                 try realm.commitWrite()
             } catch {
-                print("Error of saving location: \(error)")
+                ErrorHandler.show(title: "Error saving location", message: "\(error)", completionHandler: nil)
                 return
             }
             
@@ -185,7 +189,7 @@ extension MapViewController {
                     realm.add(newLocation)
                 }
             } catch {
-                print("Error of saving location: \(error)")
+                ErrorHandler.show(title: "Error saving location", message: "\(error)", completionHandler: nil)
                 return
             }
         }

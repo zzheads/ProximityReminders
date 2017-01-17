@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.locationManager.requestAlwaysAuthorization()
         }
         if (!self.locationManager.isAuthorized) {
-            print("Application can not work without permission for monitoring location changes and will be terminated.")
+            ErrorHandler.show(title: "Locations permissions", message: "Application can not work without permission of monitoring location changes and will be terminated.", completionHandler: nil)
             permissionsGranted = false
         }
         
@@ -36,12 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.center.requestAuthorization(options: [.badge, .alert, .sound]) { (granted, error) in
             if (!granted) {
-                print("Application can not work without permission for user notifications and will be terminated. Error: \(error)")
+                ErrorHandler.show(title: "Notifications permissions", message: "Application can not work without permission of user notifications and will be terminated.", completionHandler: nil)
                 permissionsGranted = false
                 return
             }
         }
         self.center.delegate = self
+        
+        let okAction = UNNotificationAction(identifier: "OK", title: "OK", options: .foreground)
+        let cancelAction = UNNotificationAction(identifier: "Cancel", title: "Cancel", options: [])
+        let category = UNNotificationCategory(identifier: "OkAction", actions: [okAction, cancelAction], intentIdentifiers: [], options: [])
+        self.center.setNotificationCategories([category])
         
         return permissionsGranted
     }
@@ -52,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.locationManager.stopUpdatingLocation()
             self.locationManager.startMonitoringSignificantLocationChanges()
         } else {
-            print("Significant Location Change Monitoring is NOT Available")
+            NSLog("Significant Location Change Monitoring is NOT Available")
         }
     }
 
@@ -67,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.locationManager.stopMonitoringSignificantLocationChanges()
             self.locationManager.startUpdatingLocation()
         } else {
-            print("Significant Location Change Monitoring is NOT Available")
+            NSLog("Significant Location Change Monitoring is NOT Available")
         }
     }
 
@@ -88,8 +93,9 @@ extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         let realm = try! Realm()
         guard let reminder = realm.object(ofType: Reminder.self, forPrimaryKey: region.identifier) else {
-            print("Strange, region is monitoring but reminder was not found. \(region)")
-            print("Reminders: \(realm.objects(Reminder.self))")
+            ErrorHandler.show(title: "Reminder not found", message: "Region \(region.identifier) is monitoring but reminder was not found", completionHandler: nil)
+            NSLog("Strange, region is monitoring but reminder was not found. \(region)")
+            NSLog("Reminders: \(realm.objects(Reminder.self))")
             return
         }
         if (reminder.inOut == .Out) {
@@ -100,8 +106,9 @@ extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         let realm = try! Realm()
         guard let reminder = realm.object(ofType: Reminder.self, forPrimaryKey: region.identifier) else {
-            print("Strange, region is monitoring but reminder was not found. \(region)")
-            print("Reminders: \(realm.objects(Reminder.self))")
+            ErrorHandler.show(title: "Reminder not found", message: "Region \(region.identifier) is monitoring but reminder was not found", completionHandler: nil)
+            NSLog("Strange, region is monitoring but reminder was not found. \(region)")
+            NSLog("Reminders: \(realm.objects(Reminder.self))")
             return
         }
         if (reminder.inOut == .In) {

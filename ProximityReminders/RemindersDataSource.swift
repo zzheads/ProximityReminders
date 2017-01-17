@@ -46,7 +46,7 @@ extension RemindersDataSource: UITableViewDataSource {
                     self.realm.delete(reminder)
                 }
             } catch {
-                print("Realm error: \(error)")
+                ErrorHandler.show(title: "Realm database error", message: "\(error)", completionHandler: nil)
             }
         }
     }
