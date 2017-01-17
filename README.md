@@ -18,8 +18,9 @@
 - [ ] Exceptional code quality.
 
 
-<img src="/ProximityReminders/Assets.xcassets/shot_01.imageset/shot_01.png" width="250">
-<img src="/ProximityReminders/Assets.xcassets/shot_02.imageset/shot_02.png" width="250">
+<img src="/ProximityReminders/Assets.xcassets/ss_01.imageset/ss_01.png" width="250">
+<img src="/ProximityReminders/Assets.xcassets/ss_02.imageset/ss_02.png" width="250">
+<img src="/ProximityReminders/Assets.xcassets/ss_03.imageset/ss_03.png" width="250">
 
 iOS app built for users who needs have reminder/reminders when get in some defined location area or get out from it.
 You can have any number of such reminders/locations. Process of creating location or reminder is pretty easy, 
@@ -28,7 +29,8 @@ Program, if search was successfull, will draw that defined location on map. Afte
 the title and press "Done" to save it for future using in your reminders. Reminder is location plus notification, 
 which will be pushed when user getin/getout to/from that location.
 
-<img src="/ProximityReminders/Assets.xcassets/shot_04.imageset/shot_04.png" width="250">
-<img src="/ProximityReminders/Assets.xcassets/shot_05.imageset/shot_05.png" width="250">
+<img src="/ProximityReminders/Assets.xcassets/ss_04.imageset/ss_04.png" width="250">
+<img src="/ProximityReminders/Assets.xcassets/ss_05.imageset/ss_05.png" width="250">
+<img src="/ProximityReminders/Assets.xcassets/ss_06.imageset/ss_06.png" width="250">
 
 ######Application uses Realm mobile database engine.[More info about it](https://realm.io)
