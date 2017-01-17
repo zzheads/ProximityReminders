@@ -31,13 +31,14 @@ class MapViewController: UIViewController {
         }
     }
     
-    weak var location: Location?
+    var location: Location?
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var placemarkTextField: UITextField!
     @IBOutlet weak var coordinateTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var radiusTextField: UITextField!
     
     override func viewDidLoad() {
         self.mapView.delegate = self
@@ -64,6 +65,7 @@ class MapViewController: UIViewController {
             self.coordinateTextField.text = "\(coordinate.latitude), \(coordinate.longitude)"
             self.annotation = MapAnnotation(coordinate: coordinate, radius: location.radius)
         }
+        self.radiusTextField.text = "\(location.radius)"
     }
     
     func addressEntered(sender: UITextField) {
@@ -152,7 +154,9 @@ extension MapViewController {
             let title = self.titleTextField.text,
             let address = self.addressTextField.text,
             let placemark = self.placemarkTextField.text,
-            let lastAnnotation = self.mapView.annotations.last
+            let lastAnnotation = self.mapView.annotations.last,
+            let radiusString = self.radiusTextField.text,
+            let radius = Double(radiusString)
             else {
                 ErrorHandler.show(title: "Error saving location", message: "Additional information required, all fields must be filled.", completionHandler: nil)
                 return
@@ -170,6 +174,7 @@ extension MapViewController {
                 location.address = address
                 location.placemark = placemark
                 location.coordinate = lastAnnotation.coordinate
+                location.radius = radius
                 try realm.commitWrite()
             } catch {
                 ErrorHandler.show(title: "Error saving location", message: "\(error)", completionHandler: nil)
@@ -182,6 +187,7 @@ extension MapViewController {
             newLocation.address = address
             newLocation.placemark = placemark
             newLocation.coordinate = lastAnnotation.coordinate
+            newLocation.radius = radius
         
             do {
                 let realm = try Realm()

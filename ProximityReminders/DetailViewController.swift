@@ -21,7 +21,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var inOutControl: UISegmentedControl!
     @IBOutlet weak var locationPickerView: UIPickerView!
     @IBOutlet weak var messageTextField: UITextField!
-    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var runSwitch: UISwitch!
     
     deinit {
@@ -49,6 +48,7 @@ class DetailViewController: UIViewController {
         guard let reminder = self.reminder else {
             return
         }
+        
         self.titleTextField.text = reminder.title
         self.messageTextField.text = reminder.message
         self.inOutControl.selectedSegmentIndex = reminder.inOut.rawValue
@@ -56,9 +56,14 @@ class DetailViewController: UIViewController {
         
         if let location = reminder.location, let index = self.locationsDataSource.locations.index(of: location) {
             self.locationPickerView.selectRow(index, inComponent: 0, animated: true)
-            self.locationLabel.text = location.desc
         } else {
-            
+            if (self.locationPickerView.numberOfRows(inComponent: 0) > 0) {
+                self.locationPickerView.selectRow(0, inComponent: 0, animated: true)
+            } else {
+                ErrorHandler.show(title: "Edit reminder error", message: "There is no any locations. Add some first.") { _ in
+                    self.dismiss(animated: true)
+                }
+            }
         }
     }
     
@@ -132,10 +137,5 @@ extension DetailViewController: UIPickerViewDelegate {
             label.text = "reused"
             return label
         }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let location = self.locationsDataSource.locations[row]
-        self.locationLabel.text = location.desc
-    }
+    }    
 }
