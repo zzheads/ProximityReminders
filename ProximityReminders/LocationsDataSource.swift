@@ -11,10 +11,10 @@ import RealmSwift
 import UIKit
 
 class LocationsDataSource: NSObject {
+    let realm = try! Realm()
+    
     var locations: Results<Location> {
-        print("Creating realm! in locations DataSource")
-        let realm = try! Realm()
-        return realm.objects(Location.self)
+        return self.realm.objects(Location.self)
     }
 }
 
@@ -49,9 +49,8 @@ extension LocationsDataSource: UITableViewDataSource {
         if (editingStyle == .delete) {
             let location = self.locations[indexPath.row]
             do {
-                let realm = try Realm()
-                try realm.write {
-                    realm.delete(location)
+                try self.realm.write {
+                    self.realm.delete(location)
                 }
             } catch {
                 print("Realm error: \(error)")

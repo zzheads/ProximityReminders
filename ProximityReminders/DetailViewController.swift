@@ -13,7 +13,6 @@ import RealmSwift
 
 class DetailViewController: UIViewController {
     let locationManager = CLLocationManager()
-    let geocoder = CLGeocoder()
     let locationsDataSource = LocationsDataSource()
     var reminder: Reminder?
     var notificationToken: NotificationToken?

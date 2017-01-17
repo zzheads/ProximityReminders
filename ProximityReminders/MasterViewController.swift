@@ -18,9 +18,6 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-        
         self.tableView.dataSource = self.dataSource
         self.notificationToken = self.dataSource.reminders.addNotificationBlock({ [weak self](changes: RealmCollectionChange) in
             guard let tableView = self?.tableView else {
@@ -66,40 +63,6 @@ extension MasterViewController {
                 let reminder = self.dataSource.reminders[indexPath.row]
                 controller.reminder = reminder
             }
-        }
-    }
-}
-
-extension MasterViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //print("Location updated, last is: \(locations.last!.coordinate)")
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        let realm = try! Realm()
-        guard let reminder = realm.object(ofType: Reminder.self, forPrimaryKey: region.identifier) else {
-            print("Strange, region is monitoring but reminder was not found. \(region)")
-            print("Reminders: \(realm.objects(Reminder.self))")
-            return
-        }
-        if (reminder.inOut == .Out) {
-            print("Event is invoked! Message: \(reminder.message)")
-        } else {
-            print("Event is not invoked! You watching for opposit event. Message: \(reminder.message)")
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        let realm = try! Realm()
-        guard let reminder = realm.object(ofType: Reminder.self, forPrimaryKey: region.identifier) else {
-            print("Strange, region is monitoring but reminder was not found. \(region)")
-            print("Reminders: \(realm.objects(Reminder.self))")
-            return
-        }
-        if (reminder.inOut == .In) {
-            print("Event is invoked! Message: \(reminder.message)")
-        } else {
-            print("Event is not invoked! You watching for opposit event. Message: \(reminder.message)")
         }
     }
 }

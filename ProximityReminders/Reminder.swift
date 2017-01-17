@@ -9,6 +9,8 @@
 import Foundation
 import RealmSwift
 import CoreLocation
+import UIKit
+import UserNotifications
 
 class Reminder: Object {
     dynamic var uuid = UUID().uuidString
@@ -46,6 +48,44 @@ extension Reminder {
             return nil
         }
         let region = CLCircularRegion(center: coordinate, radius: location.radius, identifier: self.uuid)
+        region.notifyOnEntry = (self.inOut == .In)
+        region.notifyOnExit = (self.inOut == .Out)
         return region
+    }
+}
+
+extension Reminder {
+    var timeTrigger: UNTimeIntervalNotificationTrigger {
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+        return trigger
+    }
+    
+    var locationTrigger: UNLocationNotificationTrigger? {
+        guard let region = self.region else {
+            return nil
+        }
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: true)
+        return trigger
+    }
+    
+    var content: UNMutableNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = self.title
+        content.body = self.message
+        content.sound = UNNotificationSound.default()
+        return content
+    }
+    
+    var request: UNNotificationRequest? {
+        let request = UNNotificationRequest(identifier: self.uuid, content: self.content, trigger: self.timeTrigger)
+        return request
+    }
+    
+    func push(completionHandler: ((Error?) -> Void)?) {
+        guard let request = self.request else {
+            print("Can not push notification! reminder: \(self)")
+            return
+        }
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: completionHandler)
     }
 }

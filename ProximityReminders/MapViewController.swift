@@ -40,7 +40,6 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
-        self.locationManager.delegate = self
         self.mapView.delegate = self
 
         if (!self.locationManager.isAuthorized) {
@@ -123,14 +122,14 @@ class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let currentLocation = locations.last else {
-            print("Unable retrieve current location!")
+extension MapViewController {
+    @IBAction func currentLocationPressed() {
+        guard let location = self.locationManager.location else {
+            print("Can not retrieve location")
             return
         }
-        self.coordinateTextField.text = "\(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)"
-        self.geocoder.reverseGeocodeLocation(currentLocation) {(placemarks, error) in
+        self.coordinateTextField.text = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
+        self.geocoder.reverseGeocodeLocation(location) {(placemarks, error) in
             guard
                 let placemarks = placemarks,
                 let placemark = placemarks.first
@@ -144,18 +143,8 @@ extension MapViewController: CLLocationManagerDelegate {
             }
             self.placemarkTextField.text = placemark.name
             self.addressTextField.text = placemark.thoroughfare! + "," + placemark.locality! + "," + placemark.country!
-            self.annotation = MapAnnotation(coordinate: currentLocation.coordinate, radius: 50.0)
+            self.annotation = MapAnnotation(coordinate: location.coordinate, radius: 50.0)
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Retrieving current position failed with error: \(error)")
-    }
-}
-
-extension MapViewController {
-    @IBAction func currentLocationPressed() {
-        self.locationManager.requestLocation()
     }
     
     @IBAction func donePressed(_ sender: Any) {
