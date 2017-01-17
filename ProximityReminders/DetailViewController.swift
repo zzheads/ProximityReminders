@@ -134,7 +134,7 @@ extension DetailViewController: UIPickerViewDelegate {
             return label
         } else {
             let label = view as! UILabel
-            label.text = "reused"
+            label.text = " \(title)"
             return label
         }
     }    
